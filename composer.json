@@ -1,5 +1,5 @@
 {
-  "name": "craftcms/feed-me",
+  "name": "rqen/feed-me-rqen",
   "description": "Import content from XML, RSS, CSV or JSON feeds into entries, categories, Craft Commerce products, and more.",
   "type": "craft-plugin",
   "keywords": [
@@ -19,7 +19,7 @@
       "homepage": "https://verbb.io"
     }
   ],
-  "support": {
+  "support___BACKUP": {
     "email": "support@craftcms.com",
     "issues": "https://github.com/craftcms/feed-me/issues?state=open",
     "source": "https://github.com/craftcms/feed-me",
@@ -54,8 +54,8 @@
     }
   },
   "extra": {
-    "name": "Feed Me",
-    "handle": "feed-me",
+    "name": "Feed Me (rqen)",
+    "handle": "feed-me-rqen",
     "documentationUrl": "https://docs.craftcms.com/feed-me/v4/"
   },
   "scripts": {

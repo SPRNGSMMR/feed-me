@@ -42,6 +42,7 @@ class Install extends Migration
             'duplicateHandle' => $this->text(),
             'updateSearchIndexes' => $this->boolean()->notNull()->defaultValue(true),
             'paginationNode' => $this->text(),
+            'paginationURLPrefix' => $this->text(),
             'fieldMapping' => $this->text(),
             'fieldUnique' => $this->text(),
             'passkey' => $this->string()->notNull(),
