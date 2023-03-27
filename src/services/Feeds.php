@@ -129,6 +129,7 @@ class Feeds extends Component
         $record->duplicateHandle = $model->duplicateHandle;
         $record->updateSearchIndexes = $model->updateSearchIndexes;
         $record->paginationNode = $model->paginationNode;
+        $record->paginationURLPrefix = $model->paginationURLPrefix;
         $record->passkey = $model->passkey;
         $record->backup = $model->backup;
         $record->setEmptyValues = $model->setEmptyValues;
@@ -261,6 +262,7 @@ class Feeds extends Component
                 'duplicateHandle',
                 'updateSearchIndexes',
                 'paginationNode',
+                'paginationURLPrefix',
                 'fieldMapping',
                 'fieldUnique',
                 'passkey',

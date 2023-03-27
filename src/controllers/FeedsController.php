@@ -421,6 +421,7 @@ class FeedsController extends Controller
         $feed->duplicateHandle = $request->getBodyParam('duplicateHandle', $feed->duplicateHandle);
         $feed->updateSearchIndexes = (bool)$request->getBodyParam('updateSearchIndexes', $feed->updateSearchIndexes);
         $feed->paginationNode = $request->getBodyParam('paginationNode', $feed->paginationNode);
+        $feed->paginationURLPrefix = $request->getBodyParam('paginationURLPrefix', $feed->paginationURLPrefix);
         $feed->passkey = $request->getBodyParam('passkey', $feed->passkey);
         $feed->backup = (bool)$request->getBodyParam('backup', $feed->backup);
         $feed->setEmptyValues = (bool)$request->getBodyParam('setEmptyValues', $feed->setEmptyValues);

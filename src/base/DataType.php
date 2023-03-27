@@ -47,8 +47,10 @@ abstract class DataType extends Component
         $flatten = Hash::flatten($array, '/');
         $url = Hash::get($flatten, $feed->paginationNode);
 
-        // if the feed provides a root relative URL, make it whole again based on the feed.
-        if ($url && UrlHelper::isRootRelativeUrl($url)) {
+        if ($feed->paginationURLPrefix && $url) {
+            $url = $feed->paginationURLPrefix . $url;
+        } else if ($url && UrlHelper::isRootRelativeUrl($url)) {
+            // if the feed provides a root relative URL, make it whole again based on the feed.
             $url = UrlHelper::hostInfo($feed->feedUrl) . $url;
         }
 

@@ -69,6 +69,17 @@
             errors: feed.getErrors('paginationNode'),
         }) }}
 
+        {{ forms.textField({
+            label: "Pagination URL prefix"|t('feed-me'),
+            instructions: "Pagination URL prefix. URL to append the pagination-item content from the feed."|t('feed-me'),
+            id: 'pagination-url-prefix',
+            name: 'pagination-url-prefix',
+            value: feed.paginationUrlPrefix,
+            errors: feed.getErrors('paginationUrlPrefix'),
+            autofocus: true,
+            required: false,
+        }) }}
+
     {% else %}
         <div class="feedme-fullpage fullpage-error">
             <img src="{{ baseAssetsUrl ~ '/img/icon-error.svg' }}">
