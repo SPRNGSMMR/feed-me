@@ -97,7 +97,7 @@ class Plugin extends \craft\base\Plugin
             return;
         }
 
-        Craft::$app->controller->redirect(UrlHelper::cpUrl('feed-me/welcome'))->send();
+        Craft::$app->controller->redirect(UrlHelper::cpUrl('feed-me-rqen/welcome'))->send();
     }
 
     /**
@@ -105,12 +105,12 @@ class Plugin extends \craft\base\Plugin
      */
     public function getSettingsResponse(): mixed
     {
-        return Craft::$app->controller->redirect(UrlHelper::cpUrl('feed-me/settings'));
+        return Craft::$app->controller->redirect(UrlHelper::cpUrl('feed-me-rqen/settings'));
     }
 
     public function getPluginName(): string
     {
-        return Craft::t('feed-me', $this->getSettings()->pluginName);
+        return Craft::t('feed-me-rqen', $this->getSettings()->pluginName);
     }
 
     /**
@@ -147,15 +147,15 @@ class Plugin extends \craft\base\Plugin
     {
         Event::on(UrlManager::class, UrlManager::EVENT_REGISTER_CP_URL_RULES, function(RegisterUrlRulesEvent $event) {
             $event->rules = array_merge($event->rules, [
-                'feed-me/feeds' => 'feed-me/feeds/feeds-index',
-                'feed-me/feeds/new' => 'feed-me/feeds/edit-feed',
-                'feed-me/feeds/<feedId:\d+>' => 'feed-me/feeds/edit-feed',
-                'feed-me/feeds/element/<feedId:\d+>' => 'feed-me/feeds/element-feed',
-                'feed-me/feeds/map/<feedId:\d+>' => 'feed-me/feeds/map-feed',
-                'feed-me/feeds/run/<feedId:\d+>' => 'feed-me/feeds/run-feed',
-                'feed-me/feeds/status/<feedId:\d+>' => 'feed-me/feeds/status-feed',
-                'feed-me/logs' => 'feed-me/logs/logs',
-                'feed-me/settings/general' => 'feed-me/base/settings',
+                'feed-me-rqen/feeds' => 'feed-me-rqen/feeds/feeds-index',
+                'feed-me-rqen/feeds/new' => 'feed-me-rqen/feeds/edit-feed',
+                'feed-me-rqen/feeds/<feedId:\d+>' => 'feed-me-rqen/feeds/edit-feed',
+                'feed-me-rqen/feeds/element/<feedId:\d+>' => 'feed-me-rqen/feeds/element-feed',
+                'feed-me-rqen/feeds/map/<feedId:\d+>' => 'feed-me-rqen/feeds/map-feed',
+                'feed-me-rqen/feeds/run/<feedId:\d+>' => 'feed-me-rqen/feeds/run-feed',
+                'feed-me-rqen/feeds/status/<feedId:\d+>' => 'feed-me-rqen/feeds/status-feed',
+                'feed-me-rqen/logs' => 'feed-me-rqen/logs/logs',
+                'feed-me-rqen/settings/general' => 'feed-me-rqen/base/settings',
             ]);
         });
     }
