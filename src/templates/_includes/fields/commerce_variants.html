@@ -16,7 +16,7 @@
         type: 'elementselect',
         options: {
             elementType: fieldClass.elementType,
-            selectionLabel: "Default Variant"|t('feed-me'),
+            selectionLabel: "Default Variant"|t('feed-me-rqen'),
             sources: field.sources ?? '*',
         },
     } %}
@@ -26,16 +26,16 @@
 
 {% block extraSettings %}
     <div class="element-match">
-        <span>{{ 'Data provided for this variant is:'|t('feed-me') }}</span>
+        <span>{{ 'Data provided for this variant is:'|t('feed-me-rqen') }}</span>
 
         {{ forms.selectField({
             name: 'options[match]',
             class: '',
             value: hash_get(feed.fieldMapping, optionsPath ~ '.match') ?: '',
             options: [
-                { value: 'title', label: 'Title'|t('feed-me') },
-                { value: 'elements.id', label: 'ID'|t('feed-me') },
-                { value: 'sku', label: 'SKU'|t('feed-me') },
+                { value: 'title', label: 'Title'|t('feed-me-rqen') },
+                { value: 'elements.id', label: 'ID'|t('feed-me-rqen') },
+                { value: 'sku', label: 'SKU'|t('feed-me-rqen') },
             ],
         }) }}
     </div>

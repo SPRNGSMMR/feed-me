@@ -1,13 +1,13 @@
 {% extends 'feed-me/_layouts' %}
 
 {% set crumbs = [
-    { label: craft.feedme.getPluginName|t('feed-me'), url: url('feed-me') },
-    { label: feed.name|t('feed-me'), url: url('feed-me/feeds/' ~ feed.id) },
+    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: url('feed-me') },
+    { label: feed.name|t('feed-me-rqen'), url: url('feed-me/feeds/' ~ feed.id) },
 ] %}
 
 {% set title = feed.name %}
 
-{% set title = (feed.id) ? feed.name : 'Create a new feed'|t('feed-me') %}
+{% set title = (feed.id) ? feed.name : 'Create a new feed'|t('feed-me-rqen') %}
 {% set noTabs = true %}
 
 {% block content %}
@@ -21,12 +21,12 @@
                 {{ tag('a', {
                     class: ['btn', 'submit'],
                     href: url('feed-me/feeds/run/' ~ feed.id),
-                    text: 'Process it now'|t('feed-me'),
+                    text: 'Process it now'|t('feed-me-rqen'),
                 }) }}
                 {{ tag('a', {
                     class: ['btn'],
                     href: url('feed-me/feeds'),
-                    text: 'View feeds'|t('feed-me'),
+                    text: 'View feeds'|t('feed-me-rqen'),
                 }) }}
             {% endapply %}
         </div>

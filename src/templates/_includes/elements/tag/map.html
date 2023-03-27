@@ -7,7 +7,7 @@
     {% set group = craft.app.tags.getTagGroupById(groupId) %}
 {% endif %}
 
-{% set tags = [{ label: 'Don’t import'|t('feed-me'), value: '' }] %}
+{% set tags = [{ label: 'Don’t import'|t('feed-me-rqen'), value: '' }] %}
 {% for tag in craft.tags.all() %}
     {% set tags = tags|merge([{ label: tag.title|slice(0, 40), value: tag.id }]) %}
 {% endfor %}
@@ -21,11 +21,11 @@
 }, {
     name: 'Status',
     handle: 'enabled',
-    instructions: 'Choose either a default status from the list or the imported field that will contain the status.'|t('feed-me'),
+    instructions: 'Choose either a default status from the list or the imported field that will contain the status.'|t('feed-me-rqen'),
     default: {
         type: 'select',
         options: [
-            { label: 'Don’t import'|t('feed-me'), value: '' },
+            { label: 'Don’t import'|t('feed-me-rqen'), value: '' },
             { label: 'Enabled', value: '1' },
             { label: 'Disabled', value: '0' },
         ],
@@ -33,19 +33,19 @@
 }, {
     name: 'Tag ID',
     handle: 'id',
-    instructions: '<strong class="error">Warning: </strong>This should only be used for an existing Craft Tag ID.'|t('feed-me'),
+    instructions: '<strong class="error">Warning: </strong>This should only be used for an existing Craft Tag ID.'|t('feed-me-rqen'),
     default: {
         type: 'text',
     },
 }] %}
 
-<h2>{{ 'Tag Fields'|t('feed-me') }}</h2>
+<h2>{{ 'Tag Fields'|t('feed-me-rqen') }}</h2>
 
 <table class="feedme-mapping data fullwidth collapsible">
     <thead>
-        <th>{{ 'Field'|t('feed-me') }}</th>
-        <th>{{ 'Feed Element'|t('feed-me') }}</th>
-        <th>{{ 'Default Value'|t('feed-me') }}</th>
+        <th>{{ 'Field'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
     </thead>
     <tbody>
         {% for field in fields %}
@@ -69,9 +69,9 @@
 
         <table class="feedme-mapping data fullwidth collapsible">
             <thead>
-                <th>{{ 'Field'|t('feed-me') }}</th>
-                <th>{{ 'Feed Element'|t('feed-me') }}</th>
-                <th>{{ 'Default Value'|t('feed-me') }}</th>
+                <th>{{ 'Field'|t('feed-me-rqen') }}</th>
+                <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
+                <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
             </thead>
             <tbody>
                 {% for layoutField in tab.getElements()|filter(e => e is instance of('craft\\fieldlayoutelements\\CustomField')) %}
@@ -90,8 +90,8 @@
 
 <hr>
 
-<h2 id="tag-uniques-label">{{ "Set a unique identifier to match against existing elements"|t('feed-me') }}</h2>
-<p>{{ "Select the fields you want to use to check for existing elements. When selected, Feed Me will look for existing elements that match the fields provided below and either update, or skip depending on your choice of Import Strategy."|t('feed-me') }}</p>
+<h2 id="tag-uniques-label">{{ "Set a unique identifier to match against existing elements"|t('feed-me-rqen') }}</h2>
+<p>{{ "Select the fields you want to use to check for existing elements. When selected, Feed Me will look for existing elements that match the fields provided below and either update, or skip depending on your choice of Import Strategy."|t('feed-me-rqen') }}</p>
 
 {% for tab in tabs %}
     {% for layoutField in tab.getElements()|filter(e => e is instance of('craft\\fieldlayoutelements\\CustomField')) %}

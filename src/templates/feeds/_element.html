@@ -3,22 +3,22 @@
 {% extends 'feed-me/_layouts' %}
 
 {% set crumbs = [
-    { label: craft.feedme.getPluginName|t('feed-me'), url: url('feed-me') },
-    { label: feed.name|t('feed-me'), url: url('feed-me/feeds/' ~ feed.id) },
-    { label: 'Element'|t('feed-me'), url: url('feed-me/feeds/element/' ~ feed.id) },
+    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: url('feed-me') },
+    { label: feed.name|t('feed-me-rqen'), url: url('feed-me/feeds/' ~ feed.id) },
+    { label: 'Element'|t('feed-me-rqen'), url: url('feed-me/feeds/element/' ~ feed.id) },
 ] %}
 
 {% set title = feed.name %}
 
-{% set title = (feed.id) ? feed.name : 'Create a new feed'|t('feed-me') %}
+{% set title = (feed.id) ? feed.name : 'Create a new feed'|t('feed-me-rqen') %}
 {% set noTabs = true %}
 {% set fullPageForm = true %}
 
 {% set buttons %}
     {% if primaryElements.success %}
         <div class="buttons">
-            <input type="button" data-action="feed-me/feeds/save-and-element-feed" class="btn submit" value="{{ 'Save'|t('feed-me') }}">
-            <input type="button" data-action="feed-me/feeds/save-and-map-feed" class="btn submit" value="{{ 'Save & Continue'|t('feed-me') }}">
+            <input type="button" data-action="feed-me/feeds/save-and-element-feed" class="btn submit" value="{{ 'Save'|t('feed-me-rqen') }}">
+            <input type="button" data-action="feed-me/feeds/save-and-map-feed" class="btn submit" value="{{ 'Save & Continue'|t('feed-me-rqen') }}">
         </div>
     {% endif %}
 {% endset %}
@@ -36,8 +36,8 @@
         {% endif %}
 
         {{ forms.selectField({
-            label: "Primary Element"|t('feed-me'),
-            instructions: "The primary element is the repeatable element that contains the data you want to import."|t('feed-me'),
+            label: "Primary Element"|t('feed-me-rqen'),
+            instructions: "The primary element is the repeatable element that contains the data you want to import."|t('feed-me-rqen'),
             id: 'primaryElement',
             name: 'primaryElement',
             value: feed.primaryElement,
@@ -46,7 +46,7 @@
         }) }}
 
         {% set parsedFeedData = [
-            { label: "No Pagination URL"|t('feed-me'), value: '' },
+            { label: "No Pagination URL"|t('feed-me-rqen'), value: '' },
         ] %}
 
         {% for key, data in feedMappingData.data %}
@@ -60,8 +60,8 @@
         {% endfor %}
 
         {{ forms.selectField({
-            label: "Pagination URL"|t('feed-me'),
-            instructions: 'If your feed is paginated, select the next page’s URL.'|t('feed-me'),
+            label: "Pagination URL"|t('feed-me-rqen'),
+            instructions: 'If your feed is paginated, select the next page’s URL.'|t('feed-me-rqen'),
             id: 'paginationNode',
             name: 'paginationNode',
             value: feed.paginationNode,
@@ -84,7 +84,7 @@
         <div class="feedme-fullpage fullpage-error">
             <img src="{{ baseAssetsUrl ~ '/img/icon-error.svg' }}">
 
-            <h2>{{ 'Unable to proceed to next step'|t('feed-me') }}</h2>
+            <h2>{{ 'Unable to proceed to next step'|t('feed-me-rqen') }}</h2>
             <p>{{ 'Feed Me is unable to find, or parse your provided data. This usually means your URL cannot be reached from your Craft site, or your {feedType} is invalid. Refer to the specific error below, check the logs, and double-check your settings.'|t('feed-me', { feedType: feed.feedType|upper }) }}</p>
 
             {% if primaryElements.error %}
@@ -94,8 +94,8 @@
             {% endif %}
 
             <div class="buttons">
-                <a href="{{ url('feed-me/feeds/' ~ feed.id) }}" class="btn submit">&larr; {{ 'Back to feed'|t('feed-me') }}</a>
-                <a href="{{ url('feed-me/logs') }}" class="btn submit">{{ 'Go to logs'|t('feed-me') }}</a>
+                <a href="{{ url('feed-me/feeds/' ~ feed.id) }}" class="btn submit">&larr; {{ 'Back to feed'|t('feed-me-rqen') }}</a>
+                <a href="{{ url('feed-me/logs') }}" class="btn submit">{{ 'Go to logs'|t('feed-me-rqen') }}</a>
             </div>
         </div>
     {% endif %}

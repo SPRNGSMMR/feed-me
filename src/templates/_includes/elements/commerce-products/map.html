@@ -27,32 +27,32 @@
 }, {
     name: 'Slug',
     handle: 'slug',
-    instructions: 'If not set, the Slug will be automatically created from Title.'|t('feed-me'),
+    instructions: 'If not set, the Slug will be automatically created from Title.'|t('feed-me-rqen'),
     default: {
         type: 'text',
     },
 }, {
     name: 'Post Date',
     handle: 'postDate',
-    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me'),
+    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me-rqen'),
     default: {
         type: 'dateTime',
     },
 }, {
     name: 'Expiry Date',
     handle: 'expiryDate',
-    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me'),
+    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me-rqen'),
     default: {
         type: 'dateTime',
     }
 }, {
     name: 'Status',
     handle: 'enabled',
-    instructions: 'Choose either a default status from the list or the imported field that will contain the status.'|t('feed-me'),
+    instructions: 'Choose either a default status from the list or the imported field that will contain the status.'|t('feed-me-rqen'),
     default: {
         type: 'select',
         options: [
-            { label: 'Don’t import'|t('feed-me'), value: '' },
+            { label: 'Don’t import'|t('feed-me-rqen'), value: '' },
             { label: 'Enabled', value: '1' },
             { label: 'Disabled', value: '0' },
         ],
@@ -94,7 +94,7 @@
 }, {
     name: 'Product ID',
     handle: 'id',
-    instructions: '<strong class="error">Warning: </strong>This should only be used for an existing Craft Commerce Product ID.'|t('feed-me'),
+    instructions: '<strong class="error">Warning: </strong>This should only be used for an existing Craft Commerce Product ID.'|t('feed-me-rqen'),
     default: {
         type: 'text',
     },
@@ -107,7 +107,7 @@
     default: {
         type: 'select',
         options: [
-            { label: 'Don’t import'|t('feed-me'), value: '' },
+            { label: 'Don’t import'|t('feed-me-rqen'), value: '' },
             { label: 'Enabled', value: '1' },
             { label: 'Disabled', value: '0' },
         ],
@@ -190,13 +190,13 @@
     },
 }] %}
 
-<h2>{{ 'Product Fields'|t('feed-me') }}</h2>
+<h2>{{ 'Product Fields'|t('feed-me-rqen') }}</h2>
 
 <table class="feedme-mapping data fullwidth collapsible">
     <thead>
-        <th>{{ 'Field'|t('feed-me') }}</th>
-        <th>{{ 'Feed Element'|t('feed-me') }}</th>
-        <th>{{ 'Default Value'|t('feed-me') }}</th>
+        <th>{{ 'Field'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
     </thead>
     <tbody>
         {% for field in fields %}
@@ -210,13 +210,13 @@
 
 <hr>
 
-<h2>{{ 'Product Variant Fields'|t('feed-me') }}</h2>
+<h2>{{ 'Product Variant Fields'|t('feed-me-rqen') }}</h2>
 
 <table class="feedme-mapping data fullwidth collapsible">
     <thead>
-        <th>{{ 'Field'|t('feed-me') }}</th>
-        <th>{{ 'Feed Element'|t('feed-me') }}</th>
-        <th>{{ 'Default Value'|t('feed-me') }}</th>
+        <th>{{ 'Field'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
     </thead>
     <tbody>
         {% for field in fieldsVariants %}
@@ -240,9 +240,9 @@
 
         <table class="feedme-mapping data fullwidth collapsible">
             <thead>
-                <th>{{ 'Field'|t('feed-me') }}</th>
-                <th>{{ 'Feed Element'|t('feed-me') }}</th>
-                <th>{{ 'Default Value'|t('feed-me') }}</th>
+                <th>{{ 'Field'|t('feed-me-rqen') }}</th>
+                <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
+                <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
             </thead>
             <tbody>
                 {% for layoutField in tab.getElements()|filter(e => e is instance of('craft\\fieldlayoutelements\\CustomField')) %}
@@ -267,13 +267,13 @@
     {% for tab in variantTabs %}
         <hr>
 
-        <h2>{{ "Variant Fields"|t('feed-me') }}</h2>
+        <h2>{{ "Variant Fields"|t('feed-me-rqen') }}</h2>
 
         <table class="feedme-mapping data fullwidth collapsible">
             <thead>
-                <th>{{ 'Field'|t('feed-me') }}</th>
-                <th>{{ 'Feed Element'|t('feed-me') }}</th>
-                <th>{{ 'Default Value'|t('feed-me') }}</th>
+                <th>{{ 'Field'|t('feed-me-rqen') }}</th>
+                <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
+                <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
             </thead>
             <tbody>
                 {% for layoutField in tab.getElements()|filter(e => e is instance of('craft\\fieldlayoutelements\\CustomField')) %}
@@ -293,8 +293,8 @@
 
 <hr>
 
-<h2 id="product-uniques-label">{{ "Set a unique identifier to match against existing elements"|t('feed-me') }}</h2>
-<p>{{ "Select the fields you want to use to check for existing elements. When selected, Feed Me will look for existing elements that match the fields provided below and either update, or skip depending on your choice of Import Strategy."|t('feed-me') }}</p>
+<h2 id="product-uniques-label">{{ "Set a unique identifier to match against existing elements"|t('feed-me-rqen') }}</h2>
+<p>{{ "Select the fields you want to use to check for existing elements. When selected, Feed Me will look for existing elements that match the fields provided below and either update, or skip depending on your choice of Import Strategy."|t('feed-me-rqen') }}</p>
 
 {% set uniqueFields = fields %}
 

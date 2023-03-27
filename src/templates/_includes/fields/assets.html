@@ -16,7 +16,7 @@
         type: 'elementselect',
         options: {
             elementType: fieldClass.elementType,
-            selectionLabel: "Default Asset"|t('feed-me'),
+            selectionLabel: "Default Asset"|t('feed-me-rqen'),
         },
     } %}
 {% endif %}
@@ -39,7 +39,7 @@
 
     <div class="assets-uploads">
         {{ feedMeMacro.checkbox({
-            label: 'Create asset from URL<span class="asset-label-hide">, if exists:</span>'|t('feed-me')|raw,
+            label: 'Create asset from URL<span class="asset-label-hide">, if exists:</span>'|t('feed-me-rqen')|raw,
             name: 'options[upload]',
             value: 1,
             checked: hash_get(feed.fieldMapping, optionsPath ~ '.upload') ?: '',

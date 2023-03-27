@@ -16,7 +16,7 @@
 }, {
     name: 'Slug',
     handle: 'slug',
-    instructions: 'If not set, the Slug will be automatically created from Title.'|t('feed-me'),
+    instructions: 'If not set, the Slug will be automatically created from Title.'|t('feed-me-rqen'),
     default: {
         type: 'text',
     },
@@ -24,7 +24,7 @@
     type: 'date',
     name: 'Start Date',
     handle: 'startDate',
-    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me'),
+    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me-rqen'),
     default: {
         type: 'dateTime',
     },
@@ -32,18 +32,18 @@
     type: 'date',
     name: 'End Date',
     handle: 'endDate',
-    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me'),
+    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me-rqen'),
     default: {
         type: 'dateTime',
     },
 }, {
     name: 'All Day',
     handle: 'allDay',
-    instructions: 'Whether this event is all day or not.'|t('feed-me'),
+    instructions: 'Whether this event is all day or not.'|t('feed-me-rqen'),
     default: {
         type: 'select',
         options: [
-            { label: 'Don’t import'|t('feed-me'), value: '' },
+            { label: 'Don’t import'|t('feed-me-rqen'), value: '' },
             { label: 'Yes', value: '1' },
             { label: 'No', value: '0' },
         ],
@@ -51,11 +51,11 @@
 }, {
     name: 'Enabled',
     handle: 'enabled',
-    instructions: 'Choose either a default status from the list or the imported field that will contain the status.'|t('feed-me'),
+    instructions: 'Choose either a default status from the list or the imported field that will contain the status.'|t('feed-me-rqen'),
     default: {
         type: 'select',
         options: [
-            { label: 'Don’t import'|t('feed-me'), value: '' },
+            { label: 'Don’t import'|t('feed-me-rqen'), value: '' },
             { label: 'Enabled', value: '1' },
             { label: 'Disabled', value: '0' },
         ],
@@ -64,31 +64,31 @@
     type: 'users',
     name: 'Author',
     handle: 'authorId',
-    instructions: 'Entries will be assigned to the user in this field. If the field does not match any existing member, the default author will be assigned.'|t('feed-me'),
+    instructions: 'Entries will be assigned to the user in this field. If the field does not match any existing member, the default author will be assigned.'|t('feed-me-rqen'),
     default: {
         type: 'elementselect',
         options: {
             elementType: 'craft\\elements\\User',
-            selectionLabel: "Default Author"|t('feed-me'),
+            selectionLabel: "Default Author"|t('feed-me-rqen'),
             limit: 1,
         },
     },
 }, {
     name: 'Event ID',
     handle: 'id',
-    instructions: '<strong class="error">Warning: </strong>This should only be used for an existing Solspace Event ID.'|t('feed-me'),
+    instructions: '<strong class="error">Warning: </strong>This should only be used for an existing Solspace Event ID.'|t('feed-me-rqen'),
     default: {
         type: 'text',
     },
 }] %}
 
-<h2>{{ 'Event Fields'|t('feed-me') }}</h2>
+<h2>{{ 'Event Fields'|t('feed-me-rqen') }}</h2>
 
 <table class="feedme-mapping data fullwidth collapsible">
     <thead>
-        <th>{{ 'Field'|t('feed-me') }}</th>
-        <th>{{ 'Feed Element'|t('feed-me') }}</th>
-        <th>{{ 'Default Value'|t('feed-me') }}</th>
+        <th>{{ 'Field'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
     </thead>
     <tbody>
         {% for field in fields %}
@@ -165,13 +165,13 @@
 
 ] %}
 
-<h2>{{ 'Recurrence Fields'|t('feed-me') }}</h2>
+<h2>{{ 'Recurrence Fields'|t('feed-me-rqen') }}</h2>
 
 <table class="feedme-mapping data fullwidth collapsible">
     <thead>
-        <th>{{ 'Field'|t('feed-me') }}</th>
-        <th>{{ 'Feed Element'|t('feed-me') }}</th>
-        <th>{{ 'Default Value'|t('feed-me') }}</th>
+        <th>{{ 'Field'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
     </thead>
     <tbody>
         {% for field in recurrenceFields %}
@@ -195,9 +195,9 @@
 
         <table class="feedme-mapping data fullwidth collapsible">
             <thead>
-                <th>{{ 'Field'|t('feed-me') }}</th>
-                <th>{{ 'Feed Element'|t('feed-me') }}</th>
-                <th>{{ 'Default Value'|t('feed-me') }}</th>
+                <th>{{ 'Field'|t('feed-me-rqen') }}</th>
+                <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
+                <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
             </thead>
             <tbody>
                 {% for layoutField in tab.getElements()|filter(e => e is instance of('craft\\fieldlayoutelements\\CustomField')) %}
@@ -216,8 +216,8 @@
 
 <hr>
 
-<h2 id="event-uniques-label">{{ "Set a unique identifier to match against existing elements"|t('feed-me') }}</h2>
-<p>{{ "Select the fields you want to use to check for existing elements. When selected, Feed Me will look for existing elements that match the fields provided below and either update, or skip depending on your choice of Import Strategy."|t('feed-me') }}</p>
+<h2 id="event-uniques-label">{{ "Set a unique identifier to match against existing elements"|t('feed-me-rqen') }}</h2>
+<p>{{ "Select the fields you want to use to check for existing elements. When selected, Feed Me will look for existing elements that match the fields provided below and either update, or skip depending on your choice of Import Strategy."|t('feed-me-rqen') }}</p>
 
 {% set uniqueFields = fields %}
 

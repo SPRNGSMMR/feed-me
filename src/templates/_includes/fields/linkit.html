@@ -59,7 +59,7 @@
 
             {% set enabledLinkTypes = field.getEnabledLinkTypes() %}
             {% set enabledLinkTypeOptions = [
-                { label: 'Don’t import'|t('feed-me'), value: '' }
+                { label: 'Don’t import'|t('feed-me-rqen'), value: '' }
             ] %}
 
             {% for enabledLinkType in enabledLinkTypes %}
@@ -76,7 +76,7 @@
             {% set default = {
                 type: 'select',
                 options: [
-                    { label: 'Don’t import'|t('feed-me'), value: '' },
+                    { label: 'Don’t import'|t('feed-me-rqen'), value: '' },
                     { label: 'Open in new window', value: '1' },
                     { label: 'Open in existing window', value: '' },
                 ]

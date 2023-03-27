@@ -9,23 +9,23 @@
 ]) %}
 
 {% set crumbs = [
-    { label: craft.feedme.getPluginName|t('feed-me'), url: url('feed-me') },
+    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: url('feed-me') },
 ] %}
 
 {% if feed.id %}
     {% set crumbs = crumbs|merge([
-        { label: feed.name|t('feed-me'), url: url('feed-me/feeds/' ~ feed.id) },
+        { label: feed.name|t('feed-me-rqen'), url: url('feed-me/feeds/' ~ feed.id) },
     ]) %}
 {% endif %}
 
-{% set title = (feed.id) ? feed.name : 'Create a new feed'|t('feed-me') %}
+{% set title = (feed.id) ? feed.name : 'Create a new feed'|t('feed-me-rqen') %}
 {% set noTabs = true %}
 {% set fullPageForm = true %}
 
 {% set buttons %}
     <div class="buttons">
-        <input type="button" data-action="feed-me/feeds/save-feed" class="btn submit" value="{{ 'Save'|t('feed-me') }}">
-        <input type="button" data-action="feed-me/feeds/save-and-element-feed" class="btn submit" value="{{ 'Save & Continue'|t('feed-me') }}">
+        <input type="button" data-action="feed-me/feeds/save-feed" class="btn submit" value="{{ 'Save'|t('feed-me-rqen') }}">
+        <input type="button" data-action="feed-me/feeds/save-and-element-feed" class="btn submit" value="{{ 'Save & Continue'|t('feed-me-rqen') }}">
     </div>
 {% endset %}
 
@@ -40,8 +40,8 @@
 
     {{ forms.textField({
         first: true,
-        label: "Name"|t('feed-me'),
-        instructions: "What this feed will be called in the CP."|t('feed-me'),
+        label: "Name"|t('feed-me-rqen'),
+        instructions: "What this feed will be called in the CP."|t('feed-me-rqen'),
         id: 'name',
         name: 'name',
         value: feed.name,
@@ -51,8 +51,8 @@
     }) }}
 
     {{ forms.textField({
-        label: "Feed URL"|t('feed-me'),
-        instructions: "Can be a file on the local file system or from a website url (http://...)."|t('feed-me'),
+        label: "Feed URL"|t('feed-me-rqen'),
+        instructions: "Can be a file on the local file system or from a website url (http://...)."|t('feed-me-rqen'),
         id: 'feedUrl',
         name: 'feedUrl',
         value: feed.feedUrl,
@@ -61,8 +61,8 @@
     }) }}
 
     {{ forms.selectField({
-        label: "Feed Type"|t('feed-me'),
-        instructions: 'Choose what type of feed you’re retrieving.'|t('feed-me'),
+        label: "Feed Type"|t('feed-me-rqen'),
+        instructions: 'Choose what type of feed you’re retrieving.'|t('feed-me-rqen'),
         id: 'feedType',
         name: 'feedType',
         options: dataTypes,
@@ -79,8 +79,8 @@
     {% endfor %}
 
     {{ forms.selectField({
-        label: "Element Type"|t('feed-me'),
-        instructions: 'Choose what element you want to save your feed data to.'|t('feed-me'),
+        label: "Element Type"|t('feed-me-rqen'),
+        instructions: 'Choose what element you want to save your feed data to.'|t('feed-me-rqen'),
         id: 'elementType',
         name: 'elementType',
         options: [{ label: 'Select', value: '' }]|merge(elementsList),
@@ -105,8 +105,8 @@
         {% endfor %}
 
         {{ forms.selectField({
-            label: "Target Site"|t('feed-me'),
-            instructions: 'Choose which site you want to save your elements to initially.'|t('feed-me'),
+            label: "Target Site"|t('feed-me-rqen'),
+            instructions: 'Choose which site you want to save your elements to initially.'|t('feed-me-rqen'),
             id: 'siteId',
             name: 'siteId',
             options: sites,
@@ -120,14 +120,14 @@
         id: 'singleton',
     }) }}
 
-    <h2>{{ 'Import strategy'|t('feed-me') }}</h2>
-    <p>{{ 'Choose what happens when this feed is run again.'|t('feed-me') }}</p>
+    <h2>{{ 'Import strategy'|t('feed-me-rqen') }}</h2>
+    <p>{{ 'Choose what happens when this feed is run again.'|t('feed-me-rqen') }}</p>
 
     {{ forms.checkboxField({
         id: 'is-create',
         name: 'duplicateHandle[]',
-        label: 'Create new elements'|t('feed-me'),
-        instructions: 'Adds new elements if they do not already exist.'|t('feed-me'),
+        label: 'Create new elements'|t('feed-me-rqen'),
+        instructions: 'Adds new elements if they do not already exist.'|t('feed-me-rqen'),
         value: 'add',
         checked: not feed.singleton and 'add' in (feed.duplicateHandle ?? ['add']),
         disabled: feed.singleton,
@@ -136,8 +136,8 @@
     {{ forms.checkboxField({
         id: 'is-update',
         name: 'duplicateHandle[]',
-        label: 'Update existing elements'|t('feed-me'),
-        instructions: 'Updates elements that match the Unique Identifier (next step).'|t('feed-me'),
+        label: 'Update existing elements'|t('feed-me-rqen'),
+        instructions: 'Updates elements that match the Unique Identifier (next step).'|t('feed-me-rqen'),
         value: 'update',
         checked: feed.singleton or 'update' in (feed.duplicateHandle ?? []),
         disabled: feed.singleton,
@@ -147,11 +147,11 @@
         id: 'is-disable-globally',
         name: 'duplicateHandle[]',
         label: craft.app.isMultiSite
-        ? 'Disable missing elements globally'|t('feed-me')
-        : 'Disable missing elements'|t('feed-me'),
+        ? 'Disable missing elements globally'|t('feed-me-rqen')
+        : 'Disable missing elements'|t('feed-me-rqen'),
         instructions: craft.app.isMultiSite
-        ? 'Disables any elements that are missing from the feed, across all sites.'|t('feed-me')
-        : 'Disables any elements that are missing from the feed.'|t('feed-me'),
+        ? 'Disables any elements that are missing from the feed, across all sites.'|t('feed-me-rqen')
+        : 'Disables any elements that are missing from the feed.'|t('feed-me-rqen'),
         value: 'disable',
         checked: not feed.singleton and 'disable' in (feed.duplicateHandle ?? []),
         disabled: feed.singleton,
@@ -161,8 +161,8 @@
         {{ forms.checkboxField({
             id: 'is-disable-site',
             name: 'duplicateHandle[]',
-            label: 'Disable missing elements in the target site'|t('feed-me'),
-            instructions: 'Disables any elements that are missing from the feed, in the feed’s target site only.'|t('feed-me'),
+            label: 'Disable missing elements in the target site'|t('feed-me-rqen'),
+            instructions: 'Disables any elements that are missing from the feed, in the feed’s target site only.'|t('feed-me-rqen'),
             value: 'disableForSite',
             checked: not feed.singleton and 'disableForSite' in (feed.duplicateHandle ?? []),
             disabled: feed.singleton,
@@ -172,8 +172,8 @@
     {{ forms.checkboxField({
         id: 'is-delete',
         name: 'duplicateHandle[]',
-        label: 'Delete missing elements'|t('feed-me'),
-        instructions: 'Deletes any elements that are missing from the feed. Be careful.'|t('feed-me'),
+        label: 'Delete missing elements'|t('feed-me-rqen'),
+        instructions: 'Deletes any elements that are missing from the feed. Be careful.'|t('feed-me-rqen'),
         value: 'delete',
         checked: not feed.singleton and 'delete' in (feed.duplicateHandle ?? []),
         disabled: feed.singleton,
@@ -182,8 +182,8 @@
     {{ forms.checkboxField({
         id: 'is-update-search-indexes',
         name: 'updateSearchIndexes',
-        label: 'Update search indexes'|t('feed-me'),
-        instructions: 'Whether search indexes should be updated.'|t('feed-me'),
+        label: 'Update search indexes'|t('feed-me-rqen'),
+        instructions: 'Whether search indexes should be updated.'|t('feed-me-rqen'),
         checked: not feed.singleton and feed.updateSearchIndexes,
         disabled: feed.singleton,
     }) }}
@@ -191,8 +191,8 @@
     <hr>
 
     {{ forms.textField({
-        label: "Passkey"|t('feed-me'),
-        instructions: "A generated, unique string to increase security against imports being run inadvertently. No need to change this."|t('feed-me'),
+        label: "Passkey"|t('feed-me-rqen'),
+        instructions: "A generated, unique string to increase security against imports being run inadvertently. No need to change this."|t('feed-me-rqen'),
         id: 'passkey',
         name: 'passkey',
         value: (feed.passkey) ? feed.passkey : '',
@@ -202,15 +202,15 @@
 
     {{ forms.lightswitchField({
         first: true,
-        label: 'Backup'|t('feed-me'),
-        instructions: 'Perform a full backup each time this feed is processed.'|t('feed-me'),
+        label: 'Backup'|t('feed-me-rqen'),
+        instructions: 'Perform a full backup each time this feed is processed.'|t('feed-me-rqen'),
         name: 'backup',
         on: (feed.id) ? feed.backup : true,
     }) }}
 
     {{ forms.lightswitchField({
-        label: 'Set Empty Values'|t('feed-me'),
-        instructions: 'When enabled, empty values are considered valid and will be used to replace existing data. When disabled, empty values are ignored.'|t('feed-me'),
+        label: 'Set Empty Values'|t('feed-me-rqen'),
+        instructions: 'When enabled, empty values are considered valid and will be used to replace existing data. When disabled, empty values are ignored.'|t('feed-me-rqen'),
         name: 'setEmptyValues',
         on: (feed.id) ? feed.setEmptyValues : false,
     }) }}

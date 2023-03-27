@@ -20,14 +20,14 @@
                 <img src="{{ baseAssetsUrl ~ '/img/icon-success.svg' }}">
 
                 <h2>{{ '{name} has started processing'|t('feed-me', { name: feed.name }) }}</h2>
-                <p>{{ 'Data is now being imported from your feed. You can navigate away from this page without disrupting your feed processing.'|t('feed-me') }}</p>
+                <p>{{ 'Data is now being imported from your feed. You can navigate away from this page without disrupting your feed processing.'|t('feed-me-rqen') }}</p>
             </div>
         {% else %}
             <div class="feedme-fullpage fullpage-error">
                 <img src="{{ baseAssetsUrl ~ '/img/icon-error.svg' }}">
 
-                <h2>{{ 'Unable to start feed'|t('feed-me') }}</h2>
-                <p>{{ 'Please check your passkey, and verify the URL is correct.'|t('feed-me') }}</p>
+                <h2>{{ 'Unable to start feed'|t('feed-me-rqen') }}</h2>
+                <p>{{ 'Please check your passkey, and verify the URL is correct.'|t('feed-me-rqen') }}</p>
             </div>
         {% endif %}
     </div>
