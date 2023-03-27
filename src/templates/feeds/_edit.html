@@ -2,14 +2,14 @@
 
 {% extends 'feed-me/_layouts' %}
 
-{% do view.registerTranslationst('feed-me-rqen', [
+{% do view.registerTranslations('feed-me-rqen', [
     'Suspend missing users',
     'Suspends any users that are missing from the feed.',
     'None',
 ]) %}
 
 {% set crumbs = [
-    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: urlt('feed-me-rqen') },
+    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: url('feed-me-rqen') },
 ] %}
 
 {% if feed.id %}
@@ -98,7 +98,7 @@
     {% endfor %}
 
     {% if craft.app.isMultiSite() %}
-        {% set sites = [{ label: 'Primary Site ({name})'|tt('feed-me-rqen', {name: craft.app.sites.primarySite.name}), value: craft.app.sites.primarySite.id }] %}
+        {% set sites = [{ label: 'Primary Site ({name})'|t('feed-me-rqen', {name: craft.app.sites.primarySite.name}), value: craft.app.sites.primarySite.id }] %}
 
         {% for site in craft.app.sites.getAllSites() %}
             {% set sites = sites|merge([{ label: site.name, value: site.id }]) %}

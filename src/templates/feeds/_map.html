@@ -1,7 +1,7 @@
 {% extends 'feed-me/_layouts' %}
 
 {% set crumbs = [
-    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: urlt('feed-me-rqen') },
+    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: url('feed-me-rqen') },
     { label: feed.name|t('feed-me-rqen'), url: url('feed-me/feeds/' ~ feed.id) },
     { label: 'Element'|t('feed-me-rqen'), url: url('feed-me/feeds/element/' ~ feed.id) },
     { label: 'Map'|t('feed-me-rqen'), url: url('feed-me/feeds/map/' ~ feed.id) },
@@ -60,7 +60,7 @@
             <img src="{{ baseAssetsUrl ~ '/img/icon-error.svg' }}">
 
             <h2>{{ 'Unable to proceed to field mapping'|t('feed-me-rqen') }}</h2>
-            <p>{{ 'Feed Me is unable to find, or parse your provided data. This usually means your URL cannot be reached from your Craft site, or your {feedType} is invalid. Check the logs, and double-check your settings.'|tt('feed-me-rqen', { feedType: feed.feedType|upper }) }}</p>
+            <p>{{ 'Feed Me is unable to find, or parse your provided data. This usually means your URL cannot be reached from your Craft site, or your {feedType} is invalid. Check the logs, and double-check your settings.'|t('feed-me-rqen', { feedType: feed.feedType|upper }) }}</p>
 
             <div class="buttons">
                 <a href="{{ url('feed-me/feeds/' ~ feed.id) }}" class="btn submit">&larr; {{ 'Back to feed'|t('feed-me-rqen') }}</a>

@@ -66,7 +66,7 @@ class Process extends Component
         Plugin::info('Preparing for feed processing.');
 
         if (!$feedData) {
-            throw new \Exception(Craft::tt('feed-me-rqen', 'No data to import.'));
+            throw new \Exception(Craft::t('feed-me-rqen', 'No data to import.'));
         }
 
         // Check for backup, best to do this before we do anything
@@ -101,7 +101,7 @@ class Process extends Component
         $return['fieldUnique'] = [];
 
         if (!$return['fieldMapping']) {
-            throw new \Exception(Craft::tt('feed-me-rqen', 'Field mapping not setup.'));
+            throw new \Exception(Craft::t('feed-me-rqen', 'Field mapping not setup.'));
         }
 
         // Ditch all fields we aren't checking for uniques on. Just simplifies each run (we don't have to check)
@@ -114,12 +114,12 @@ class Process extends Component
         }
 
         if (empty($feed['singleton']) && empty($return['fieldUnique'])) {
-            throw new \Exception(Craft::tt('feed-me-rqen', 'No unique fields checked.'));
+            throw new \Exception(Craft::t('feed-me-rqen', 'No unique fields checked.'));
         }
 
         // Get the service for the Element Type we're dealing with
         if (!$feed->element) {
-            throw new \Exception(Craft::tt('feed-me-rqen', 'Unknown Element Type Service called.'));
+            throw new \Exception(Craft::t('feed-me-rqen', 'Unknown Element Type Service called.'));
         }
 
         // If our duplication handling is to delete - we delete all elements
@@ -459,7 +459,7 @@ class Process extends Component
             $unchangedContent = DataHelper::compareElementContent($contentData, $existingElement);
 
             if ($unchangedContent) {
-                $info = Craft::tt('feed-me-rqen', 'Node `#{i}` skipped. No content has changed.', ['i' => ($step + 1)]);
+                $info = Craft::t('feed-me-rqen', 'Node `#{i}` skipped. No content has changed.', ['i' => ($step + 1)]);
 
                 Plugin::info($info);
                 Plugin::debug($info);
@@ -514,7 +514,7 @@ class Process extends Component
             throw new \Exception('Node #' . ($step + 1) . ' - ' . Json::encode($element->getErrors()));
         }
 
-        throw new \Exception(Craft::tt('feed-me-rqen', 'Unknown Element saving error occurred.'));
+        throw new \Exception(Craft::t('feed-me-rqen', 'Unknown Element saving error occurred.'));
     }
 
     /**

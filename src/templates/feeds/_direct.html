@@ -7,7 +7,7 @@
     <!-- Responsive-ness -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ 'Feed Me - {name} has started processing'|tt('feed-me-rqen', { name: feed.name }) }}</title>
+    <title>{{ 'Feed Me - {name} has started processing'|t('feed-me-rqen', { name: feed.name }) }}</title>
 
     <!-- CSS -->
 </head>
@@ -19,7 +19,7 @@
             <div class="feedme-fullpage fullpage-running">
                 <img src="{{ baseAssetsUrl ~ '/img/icon-success.svg' }}">
 
-                <h2>{{ '{name} has started processing'|tt('feed-me-rqen', { name: feed.name }) }}</h2>
+                <h2>{{ '{name} has started processing'|t('feed-me-rqen', { name: feed.name }) }}</h2>
                 <p>{{ 'Data is now being imported from your feed. You can navigate away from this page without disrupting your feed processing.'|t('feed-me-rqen') }}</p>
             </div>
         {% else %}

@@ -51,9 +51,9 @@ class FeedMeVariable extends ServiceLocator
         $enabledTabs = $settings->enabledTabs;
 
         $tabs = [
-            'feeds' => ['label' => Craft::tt('feed-me-rqen', 'Feeds'), 'url' => UrlHelper::cpUrl('feed-me/feeds')],
-            'logs' => ['label' => Craft::tt('feed-me-rqen', 'Logs'), 'url' => UrlHelper::cpUrl('feed-me/logs')],
-            'settings' => ['label' => Craft::tt('feed-me-rqen', 'Settings'), 'url' => UrlHelper::cpUrl('feed-me/settings')],
+            'feeds' => ['label' => Craft::t('feed-me-rqen', 'Feeds'), 'url' => UrlHelper::cpUrl('feed-me/feeds')],
+            'logs' => ['label' => Craft::t('feed-me-rqen', 'Logs'), 'url' => UrlHelper::cpUrl('feed-me/logs')],
+            'settings' => ['label' => Craft::t('feed-me-rqen', 'Settings'), 'url' => UrlHelper::cpUrl('feed-me/settings')],
         ];
 
         if (!is_array($enabledTabs)) {
@@ -266,12 +266,12 @@ class FeedMeVariable extends ServiceLocator
 
         $return = [];
 
-        $return[''] = Craft::tt('feed-me-rqen', 'Don\'t Import');
+        $return[''] = Craft::t('feed-me-rqen', 'Don\'t Import');
 
         foreach ($folders as $folder) {
             $return[] = [
                 'value' => 'root',
-                'label' => Craft::tt('feed-me-rqen', 'Root Folder'),
+                'label' => Craft::t('feed-me-rqen', 'Root Folder'),
             ];
 
             $children = $folder->getChildren();
