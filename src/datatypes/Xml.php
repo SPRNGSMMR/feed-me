@@ -53,9 +53,9 @@ class Xml extends DataType implements DataTypeInterface
         } catch (Exception $e) {
             // Get a more useful error from parsing - if available
             if ($parseErrors = libxml_get_errors()) {
-                $error = Craft::t('feed-me', 'Invalid XML: {e}: Line #{l}.', ['e' => $parseErrors[0]->message, 'l' => $parseErrors[0]->line]);
+                $error = Craft::tt('feed-me-rqen', 'Invalid XML: {e}: Line #{l}.', ['e' => $parseErrors[0]->message, 'l' => $parseErrors[0]->line]);
             } else {
-                $error = Craft::t('feed-me', 'Invalid XML: {e}.', ['e' => $e->getMessage()]);
+                $error = Craft::tt('feed-me-rqen', 'Invalid XML: {e}.', ['e' => $e->getMessage()]);
             }
 
             Plugin::error($error);

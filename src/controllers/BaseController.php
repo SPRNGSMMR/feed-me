@@ -25,7 +25,7 @@ class BaseController extends Controller
     {
         $settings = Plugin::$plugin->getSettings();
 
-        return $this->renderTemplate('feed-me/settings/general', [
+        return $this->renderTemplate('feed-me-rqen/settings/general', [
             'settings' => $settings,
         ]);
     }
@@ -41,6 +41,6 @@ class BaseController extends Controller
             ->delete('{{%queue}}')
             ->execute();
 
-        return $this->redirect('feed-me/settings/general');
+        return $this->redirect('feed-me-rqen/settings/general');
     }
 }

@@ -115,7 +115,7 @@ class Feeds extends Component
             $record = FeedRecord::findOne($model->id);
 
             if (!$record) {
-                throw new Exception(Craft::t('feed-me', 'No feed exists with the ID “{id}”', ['id' => $model->id]));
+                throw new Exception(Craft::tt('feed-me-rqen', 'No feed exists with the ID “{id}”', ['id' => $model->id]));
             }
         }
 
@@ -205,7 +205,7 @@ class Feeds extends Component
     public function getModelOverrides($handle, $feedId): mixed
     {
         if (empty($this->_overrides[$feedId])) {
-            $this->_overrides[$feedId] = Hash::get(Craft::$app->getConfig()->getConfigFromFile('feed-me'), 'feedOptions.' . $feedId);
+            $this->_overrides[$feedId] = Hash::get(Craft::$app->getConfig()->getConfigFromFilet('feed-me-rqen'), 'feedOptions.' . $feedId);
         }
 
         return $this->_overrides[$feedId][$handle] ?? null;
@@ -314,7 +314,7 @@ class Feeds extends Component
             $feedRecord = FeedRecord::findOne(['id' => $feedId]);
 
             if (!$feedRecord) {
-                throw new FeedException(Craft::t('feed-me', 'No feed exists with the ID “{id}”.', ['id' => $feedId]));
+                throw new FeedException(Craft::tt('feed-me-rqen', 'No feed exists with the ID “{id}”.', ['id' => $feedId]));
             }
         } else {
             $feedRecord = new FeedRecord();

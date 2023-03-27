@@ -74,7 +74,7 @@ class Logs extends Component
     {
         $dateTime = new DateTime();
         $type = explode('::', $method)[1];
-        $message = Craft::t('feed-me', $message, $params);
+        $message = Craft::tt('feed-me-rqen', $message, $params);
 
         // Make sure to check if we should log anything
         if (!$this->_canLog($type)) {
