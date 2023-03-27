@@ -37,7 +37,7 @@ class GlobalSet extends Element
      */
     public function getGroupsTemplate(): string
     {
-        return 'feed-me/_includes/elements/global-sets/groups';
+        return 'feed-me-rqen/_includes/elements/global-sets/groups';
     }
 
     /**
@@ -45,7 +45,7 @@ class GlobalSet extends Element
      */
     public function getColumnTemplate(): string
     {
-        return 'feed-me/_includes/elements/global-sets/column';
+        return 'feed-me-rqen/_includes/elements/global-sets/column';
     }
 
     /**
@@ -53,7 +53,7 @@ class GlobalSet extends Element
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me/_includes/elements/global-sets/map';
+        return 'feed-me-rqen/_includes/elements/global-sets/map';
     }
 
     /**

@@ -35,7 +35,7 @@ class Date extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me/_includes/fields/date';
+        return 'feed-me-rqen/_includes/fields/date';
     }
 
     // Public Methods

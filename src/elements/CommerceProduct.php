@@ -52,7 +52,7 @@ class CommerceProduct extends Element
      */
     public function getGroupsTemplate(): string
     {
-        return 'feed-me/_includes/elements/commerce-products/groups';
+        return 'feed-me-rqen/_includes/elements/commerce-products/groups';
     }
 
     /**
@@ -60,7 +60,7 @@ class CommerceProduct extends Element
      */
     public function getColumnTemplate(): string
     {
-        return 'feed-me/_includes/elements/commerce-products/column';
+        return 'feed-me-rqen/_includes/elements/commerce-products/column';
     }
 
     /**
@@ -68,7 +68,7 @@ class CommerceProduct extends Element
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me/_includes/elements/commerce-products/map';
+        return 'feed-me-rqen/_includes/elements/commerce-products/map';
     }
 
     // Public Methods

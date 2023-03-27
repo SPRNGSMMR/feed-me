@@ -24,7 +24,7 @@ class LogsController extends Controller
         // Limit to 300 for UI
         $logEntries = array_slice($logEntries, 0, 300);
 
-        return $this->renderTemplate('feed-me/logs/index', [
+        return $this->renderTemplate('feed-me-rqen/logs/index', [
             'show' => $show,
             'logEntries' => $logEntries,
         ]);
@@ -37,6 +37,6 @@ class LogsController extends Controller
     {
         Plugin::$plugin->getLogs()->clear();
 
-        return $this->redirect('feed-me/logs');
+        return $this->redirect('feed-me-rqen/logs');
     }
 }

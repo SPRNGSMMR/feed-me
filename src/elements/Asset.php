@@ -48,7 +48,7 @@ class Asset extends Element
      */
     public function getGroupsTemplate(): string
     {
-        return 'feed-me/_includes/elements/assets/groups';
+        return 'feed-me-rqen/_includes/elements/assets/groups';
     }
 
     /**
@@ -56,7 +56,7 @@ class Asset extends Element
      */
     public function getColumnTemplate(): string
     {
-        return 'feed-me/_includes/elements/assets/column';
+        return 'feed-me-rqen/_includes/elements/assets/column';
     }
 
     /**
@@ -64,7 +64,7 @@ class Asset extends Element
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me/_includes/elements/assets/map';
+        return 'feed-me-rqen/_includes/elements/assets/map';
     }
 
 

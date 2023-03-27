@@ -34,7 +34,7 @@ class SmartMap extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me/_includes/fields/smart-map';
+        return 'feed-me-rqen/_includes/fields/smart-map';
     }
 
     // Public Methods

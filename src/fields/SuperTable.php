@@ -35,7 +35,7 @@ class SuperTable extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me/_includes/fields/super-table';
+        return 'feed-me-rqen/_includes/fields/super-table';
     }
 
     // Public Methods

@@ -34,7 +34,7 @@ class MultiSelect extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me/_includes/fields/option-select';
+        return 'feed-me-rqen/_includes/fields/option-select';
     }
 
     // Public Methods

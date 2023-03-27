@@ -49,7 +49,7 @@ class Tags extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me/_includes/fields/tags';
+        return 'feed-me-rqen/_includes/fields/tags';
     }
 
     // Public Methods

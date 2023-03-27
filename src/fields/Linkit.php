@@ -35,7 +35,7 @@ class Linkit extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me/_includes/fields/linkit';
+        return 'feed-me-rqen/_includes/fields/linkit';
     }
 
     // Public Methods

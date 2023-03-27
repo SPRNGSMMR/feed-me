@@ -45,7 +45,7 @@ class Categories extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me/_includes/fields/categories';
+        return 'feed-me-rqen/_includes/fields/categories';
     }
 
     // Public Methods
