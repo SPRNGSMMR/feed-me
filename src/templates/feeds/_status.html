@@ -1,7 +1,7 @@
 {% extends 'feed-me/_layouts' %}
 
 {% set crumbs = [
-    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: url('feed-me') },
+    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: url('feed-me-rqen') },
     { label: feed.name|t('feed-me-rqen'), url: url('feed-me/feeds/' ~ feed.id) },
 ] %}
 
@@ -14,7 +14,7 @@
     <div class="feedme-fullpage fullpage-running fullpage-running-cp">
         <img src="{{ baseAssetsUrl ~ '/img/icon-success.svg' }}">
 
-        <h2>{{ '{name} has been saved.'|t('feed-me', { name: feed.name }) }}</h2>
+        <h2>{{ '{name} has been saved.'|t('feed-me-rqen', { name: feed.name }) }}</h2>
 
         <div class="feedme-success-btns">
             {% apply spaceless %}

@@ -25,56 +25,56 @@ class BaseHelper
         }
 
         // Also check for translated values of boolean-like terms
-        if (strtolower($value) === Craft::t('feed-me', 'yes')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'yes')) {
             $result = true;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'on')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'on')) {
             $result = true;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'open')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'open')) {
             $result = true;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'enabled')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'enabled')) {
             $result = true;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'live')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'live')) {
             $result = true;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'active')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'active')) {
             $result = true;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'y')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'y')) {
             $result = true;
         }
 
 
-        if (strtolower($value) === Craft::t('feed-me', 'no')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'no')) {
             $result = false;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'off')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'off')) {
             $result = false;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'closed')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'closed')) {
             $result = false;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'disabled')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'disabled')) {
             $result = false;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'inactive')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'inactive')) {
             $result = false;
         }
 
-        if (strtolower($value) === Craft::t('feed-me', 'n')) {
+        if (strtolower($value) === Craft::t('feed-me-rqen', 'n')) {
             $result = false;
         }
 

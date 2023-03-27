@@ -16,6 +16,6 @@ class InstallTest extends Unit
 
     public function testFeedMeIsInstalled()
     {
-        $this->assertNotNull(Craft::$app->plugins->getPlugin('feed-me'));
+        $this->assertNotNull(Craft::$app->plugins->getPlugin('feed-me-rqen'));
     }
 }

@@ -3,7 +3,7 @@
 {% extends 'feed-me/_layouts' %}
 
 {% set crumbs = [
-    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: url('feed-me') },
+    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: url('feed-me-rqen') },
     { label: feed.name|t('feed-me-rqen'), url: url('feed-me/feeds/' ~ feed.id) },
     { label: 'Element'|t('feed-me-rqen'), url: url('feed-me/feeds/element/' ~ feed.id) },
 ] %}
@@ -85,7 +85,7 @@
             <img src="{{ baseAssetsUrl ~ '/img/icon-error.svg' }}">
 
             <h2>{{ 'Unable to proceed to next step'|t('feed-me-rqen') }}</h2>
-            <p>{{ 'Feed Me is unable to find, or parse your provided data. This usually means your URL cannot be reached from your Craft site, or your {feedType} is invalid. Refer to the specific error below, check the logs, and double-check your settings.'|t('feed-me', { feedType: feed.feedType|upper }) }}</p>
+            <p>{{ 'Feed Me is unable to find, or parse your provided data. This usually means your URL cannot be reached from your Craft site, or your {feedType} is invalid. Refer to the specific error below, check the logs, and double-check your settings.'|t('feed-me-rqen', { feedType: feed.feedType|upper }) }}</p>
 
             {% if primaryElements.error %}
                 <div class="fullpage-error-message">

@@ -140,6 +140,6 @@ class FeedImport extends BaseJob implements RetryableJobInterface
      */
     protected function defaultDescription(): string
     {
-        return Craft::t('feed-me', 'Running {name} feed.', ['name' => $this->feed->name]);
+        return Craft::t('feed-me-rqen', 'Running {name} feed.', ['name' => $this->feed->name]);
     }
 }
