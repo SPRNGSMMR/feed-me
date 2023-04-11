@@ -245,7 +245,8 @@ class FeedModel extends Model
         echo "PaginationNode: \n";
         print_r($this->paginationNode);
         if ($this->paginationURLPrefix) {
-            $this->feedUrl = $this->paginationURLPrefix . $this->paginationNode;
+            // $this->feedUrl = $this->paginationURLPrefix . $this->paginationNode;
+            $this->feedUrl = $this->paginationURLPrefix . $this->paginationUrl;
             return true;
         }
 
