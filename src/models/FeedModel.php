@@ -238,13 +238,19 @@ class FeedModel extends Model
      */
     public function getNextPagination(): bool
     {
-        if (!$this->paginationUrl || !filter_var($this->paginationUrl, FILTER_VALIDATE_URL)) {
-            return false;
-        }
-
+        echo "\n";
+        echo "PaginationUrl: \n";
+        print_r($this->paginationUrl);
+        echo "\n";
+        echo "PaginationNode: \n";
+        print_r($this->paginationNode);
         if ($this->paginationURLPrefix) {
             $this->feedUrl = $this->paginationURLPrefix . $this->paginationNode;
             return true;
+        }
+
+        if (!$this->paginationUrl || !filter_var($this->paginationUrl, FILTER_VALIDATE_URL)) {
+            return false;
         }
 
         // Set the URL dynamically on the feed, then kick off processing again
