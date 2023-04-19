@@ -1,5 +1,5 @@
 {
-  "name": "rqen/feed-me-rqen",
+  "name": "rqen/feed-me",
   "description": "Import content from XML, RSS, CSV or JSON feeds into entries, categories, Craft Commerce products, and more.",
   "type": "craft-plugin",
   "keywords": [
@@ -55,7 +55,7 @@
   },
   "extra": {
     "name": "Feed Me (rqen)",
-    "handle": "feed-me-rqen",
+    "handle": "feed-me",
     "documentationUrl": "https://docs.craftcms.com/feed-me/v4/"
   },
   "scripts": {
