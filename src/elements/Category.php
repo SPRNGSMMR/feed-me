@@ -45,7 +45,7 @@ class Category extends Element
      */
     public function getGroupsTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/categories/groups';
+        return 'feed-me/_includes/elements/categories/groups';
     }
 
     /**
@@ -53,7 +53,7 @@ class Category extends Element
      */
     public function getColumnTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/categories/column';
+        return 'feed-me/_includes/elements/categories/column';
     }
 
     /**
@@ -61,7 +61,7 @@ class Category extends Element
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/categories/map';
+        return 'feed-me/_includes/elements/categories/map';
     }
 
     // Public Methods

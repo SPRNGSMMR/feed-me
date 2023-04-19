@@ -50,7 +50,7 @@ class Entry extends Element
      */
     public function getGroupsTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/entries/groups';
+        return 'feed-me/_includes/elements/entries/groups';
     }
 
     /**
@@ -58,7 +58,7 @@ class Entry extends Element
      */
     public function getColumnTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/entries/column';
+        return 'feed-me/_includes/elements/entries/column';
     }
 
     /**
@@ -66,7 +66,7 @@ class Entry extends Element
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/entries/map';
+        return 'feed-me/_includes/elements/entries/map';
     }
 
     // Public Methods

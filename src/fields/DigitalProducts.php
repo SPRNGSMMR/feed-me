@@ -43,7 +43,7 @@ class DigitalProducts extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/fields/digital-products';
+        return 'feed-me/_includes/fields/digital-products';
     }
 
 

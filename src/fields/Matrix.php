@@ -35,7 +35,7 @@ class Matrix extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/fields/matrix';
+        return 'feed-me/_includes/fields/matrix';
     }
 
     // Public Methods

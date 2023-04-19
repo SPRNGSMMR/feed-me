@@ -15,12 +15,12 @@
 
 {% block extraSettings %}
     <div class="element-match">
-        <span>{{ 'Data provided for this element is:'|t('feed-me-rqen') }}</span>
+        <span>{{ 'Data provided for this element is:'|t('feed-me') }}</span>
 
         {% set matchAttributes = [
-            { value: 'title', label: 'Title'|t('feed-me-rqen') },
-            { value: 'elements.id', label: 'ID'|t('feed-me-rqen') },
-            { value: 'slug', label: 'Slug'|t('feed-me-rqen') },
+            { value: 'title', label: 'Title'|t('feed-me') },
+            { value: 'elements.id', label: 'ID'|t('feed-me') },
+            { value: 'slug', label: 'Slug'|t('feed-me') },
         ] %}
 
         {% for field in craft.app.fields.getAllFields() %}

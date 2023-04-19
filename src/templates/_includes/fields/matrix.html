@@ -39,14 +39,14 @@
 
                     {% namespace 'fieldMapping[' ~ blockPath|join('][') ~ ']' %}
                         {{ feedMeMacro.checkbox({
-                            label: 'Disabled'|t('feed-me-rqen'),
+                            label: 'Disabled'|t('feed-me'),
                             name: 'disabled',
                             value: 1,
                             checked: disabled,
                         }) }}
 
                         {{ feedMeMacro.checkbox({
-                            label: 'Collapsed'|t('feed-me-rqen'),
+                            label: 'Collapsed'|t('feed-me'),
                             name: 'collapsed',
                             value: 1,
                             checked: collapsed,

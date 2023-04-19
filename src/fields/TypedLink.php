@@ -34,7 +34,7 @@ class TypedLink extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/fields/typed-link';
+        return 'feed-me/_includes/fields/typed-link';
     }
 
     // Public Methods

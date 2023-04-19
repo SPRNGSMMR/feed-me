@@ -51,11 +51,11 @@ class GoogleMaps extends Field implements FieldInterface
 
         // If earlier than Google Maps v4.3, return old version of the template
         if ($pre43) {
-            return 'feed-me-rqen/_includes/fields/google-maps-before-4-3';
+            return 'feed-me/_includes/fields/google-maps-before-4-3';
         }
 
         // By default, return the modern version of the template
-        return 'feed-me-rqen/_includes/fields/google-maps';
+        return 'feed-me/_includes/fields/google-maps';
     }
 
     // Public Methods

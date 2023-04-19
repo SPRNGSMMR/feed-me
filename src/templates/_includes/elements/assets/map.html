@@ -21,7 +21,7 @@
         type: 'assets-create',
         name: 'URL or Path',
         handle: 'urlOrPath',
-        instructions: 'Enter either the path (including filename) or URL to the image for this asset to be created from.'|t('feed-me-rqen'),
+        instructions: 'Enter either the path (including filename) or URL to the image for this asset to be created from.'|t('feed-me'),
         required: true,
         default: {
             type: 'text',
@@ -32,12 +32,12 @@
 {% set fields = fields|merge([{
     name: 'Filename',
     handle: 'filename',
-    instructions: 'The filename for this asset. If not provided, this will be derived from the path or URL.'|t('feed-me-rqen'),
+    instructions: 'The filename for this asset. If not provided, this will be derived from the path or URL.'|t('feed-me'),
 }, {
     name: 'Folder',
     handle: 'folderId',
     type: 'assets-folder',
-    instructions: 'Select the folder name this asset will be uploaded into.'|t('feed-me-rqen'),
+    instructions: 'Select the folder name this asset will be uploaded into.'|t('feed-me'),
     default: {
         type: 'select',
         options: folders,
@@ -45,19 +45,19 @@
 }, {
     name: 'Asset ID',
     handle: 'id',
-    instructions: '<strong class="error">Warning: </strong>This should only be used for an existing Craft Asset ID.'|t('feed-me-rqen'),
+    instructions: '<strong class="error">Warning: </strong>This should only be used for an existing Craft Asset ID.'|t('feed-me'),
     default: {
         type: 'text',
     },
 }]) %}
 
-<h2>{{ 'Asset Fields'|t('feed-me-rqen') }}</h2>
+<h2>{{ 'Asset Fields'|t('feed-me') }}</h2>
 
 <table class="feedme-mapping data fullwidth collapsible">
     <thead>
-        <th>{{ 'Field'|t('feed-me-rqen') }}</th>
-        <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
-        <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Field'|t('feed-me') }}</th>
+        <th>{{ 'Feed Element'|t('feed-me') }}</th>
+        <th>{{ 'Default Value'|t('feed-me') }}</th>
     </thead>
     <tbody>
         {% for field in fields %}
@@ -81,9 +81,9 @@
 
         <table class="feedme-mapping data fullwidth collapsible">
             <thead>
-                <th>{{ 'Field'|t('feed-me-rqen') }}</th>
-                <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
-                <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
+                <th>{{ 'Field'|t('feed-me') }}</th>
+                <th>{{ 'Feed Element'|t('feed-me') }}</th>
+                <th>{{ 'Default Value'|t('feed-me') }}</th>
             </thead>
             <tbody>
                 {% for layoutField in tab.getElements()|filter(e => e is instance of('craft\\fieldlayoutelements\\CustomField')) %}
@@ -102,8 +102,8 @@
 
 <hr>
 
-<h2 id="asset-uniques-label">{{ "Set a unique identifier to match against existing elements"|t('feed-me-rqen') }}</h2>
-<p>{{ "Select the fields you want to use to check for existing elements. When selected, Feed Me will look for existing elements that match the fields provided below and either update, or skip depending on your choice of Import Strategy."|t('feed-me-rqen') }}</p>
+<h2 id="asset-uniques-label">{{ "Set a unique identifier to match against existing elements"|t('feed-me') }}</h2>
+<p>{{ "Select the fields you want to use to check for existing elements. When selected, Feed Me will look for existing elements that match the fields provided below and either update, or skip depending on your choice of Import Strategy."|t('feed-me') }}</p>
 
 {% for tab in tabs %}
     {% for layoutField in tab.getElements()|filter(e => e is instance of('craft\\fieldlayoutelements\\CustomField')) %}

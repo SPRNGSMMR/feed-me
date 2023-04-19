@@ -42,7 +42,7 @@ class CalendarEvents extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/fields/calendar-events';
+        return 'feed-me/_includes/fields/calendar-events';
     }
 
     // Public Methods

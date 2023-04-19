@@ -16,7 +16,7 @@
         type: 'elementselect',
         options: {
             elementType: fieldClass.elementType,
-            selectionLabel: "Default User"|t('feed-me-rqen'),
+            selectionLabel: "Default User"|t('feed-me'),
             sources: field.sources ?? '*',
         },
     } %}
@@ -38,13 +38,13 @@
 
 {% block extraSettings %}
     <div class="element-match">
-        <span>{{ 'Data provided for this user is:'|t('feed-me-rqen') }}</span>
+        <span>{{ 'Data provided for this user is:'|t('feed-me') }}</span>
 
         {% set matchAttributes = [
-            { value: 'email', label: 'Email'|t('feed-me-rqen') },
-            { value: 'elements.id', label: 'ID'|t('feed-me-rqen') },
-            { value: 'username', label: 'Username'|t('feed-me-rqen') },
-            { value: 'fullName', label: 'Full Name'|t('feed-me-rqen') },
+            { value: 'email', label: 'Email'|t('feed-me') },
+            { value: 'elements.id', label: 'ID'|t('feed-me') },
+            { value: 'username', label: 'Username'|t('feed-me') },
+            { value: 'fullName', label: 'Full Name'|t('feed-me') },
         ] %}
 
         {% for field in craft.app.fields.getAllFields() %}
@@ -65,7 +65,7 @@
 
     <div class="element-create">
         {{ feedMeMacro.checkbox({
-            label: 'Create users if they do not exist'|t('feed-me-rqen'),
+            label: 'Create users if they do not exist'|t('feed-me'),
             name: 'options[create]',
             value: 1,
             checked: hash_get(feed.fieldMapping, optionsPath ~ '.create') ?: '',

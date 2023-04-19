@@ -16,7 +16,7 @@
 }, {
     name: 'Slug',
     handle: 'slug',
-    instructions: 'If not set, the Slug will be automatically created from Title.'|t('feed-me-rqen'),
+    instructions: 'If not set, the Slug will be automatically created from Title.'|t('feed-me'),
     default: {
         type: 'text',
     },
@@ -24,7 +24,7 @@
     type: 'date',
     name: 'Post Date',
     handle: 'postDate',
-    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me-rqen'),
+    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me'),
     default: {
         type: 'dateTime',
     },
@@ -32,18 +32,18 @@
     type: 'date',
     name: 'Expiry Date',
     handle: 'expiryDate',
-    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me-rqen'),
+    instructions: 'Accepts Unix timestamp, or just about any English textual datetime description.'|t('feed-me'),
     default: {
         type: 'dateTime',
     },
 }, {
     name: 'Status',
     handle: 'enabled',
-    instructions: 'Choose either a default status from the list or the imported field that will contain the status.'|t('feed-me-rqen'),
+    instructions: 'Choose either a default status from the list or the imported field that will contain the status.'|t('feed-me'),
     default: {
         type: 'select',
         options: [
-            { label: 'Don’t import'|t('feed-me-rqen'), value: '' },
+            { label: 'Don’t import'|t('feed-me'), value: '' },
             { label: 'Enabled', value: '1' },
             { label: 'Disabled', value: '0' },
         ],
@@ -85,19 +85,19 @@
 }, {
     name: 'Product ID',
     handle: 'id',
-    instructions: '<strong class="error">Warning: </strong>This should only be used for an existing Product ID.'|t('feed-me-rqen'),
+    instructions: '<strong class="error">Warning: </strong>This should only be used for an existing Product ID.'|t('feed-me'),
     default: {
         type: 'text',
     },
 }] %}
 
-<h2>{{ 'Product Fields'|t('feed-me-rqen') }}</h2>
+<h2>{{ 'Product Fields'|t('feed-me') }}</h2>
 
 <table class="feedme-mapping data fullwidth collapsible">
     <thead>
-        <th>{{ 'Field'|t('feed-me-rqen') }}</th>
-        <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
-        <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
+        <th>{{ 'Field'|t('feed-me') }}</th>
+        <th>{{ 'Feed Element'|t('feed-me') }}</th>
+        <th>{{ 'Default Value'|t('feed-me') }}</th>
     </thead>
     <tbody>
         {% for field in fields %}
@@ -121,9 +121,9 @@
 
         <table class="feedme-mapping data fullwidth collapsible">
             <thead>
-                <th>{{ 'Field'|t('feed-me-rqen') }}</th>
-                <th>{{ 'Feed Element'|t('feed-me-rqen') }}</th>
-                <th>{{ 'Default Value'|t('feed-me-rqen') }}</th>
+                <th>{{ 'Field'|t('feed-me') }}</th>
+                <th>{{ 'Feed Element'|t('feed-me') }}</th>
+                <th>{{ 'Default Value'|t('feed-me') }}</th>
             </thead>
             <tbody>
                 {% for layoutField in tab.getElements()|filter(e => e is instance of('craft\\fieldlayoutelements\\CustomField')) %}
@@ -142,8 +142,8 @@
 
 <hr>
 
-<h2 id="digital-product-uniques-label">{{ "Set a unique identifier to match against existing elements"|t('feed-me-rqen') }}</h2>
-<p>{{ "Select the fields you want to use to check for existing elements. When selected, Feed Me will look for existing elements that match the fields provided below and either update, or skip depending on your choice of Import Strategy."|t('feed-me-rqen') }}</p>
+<h2 id="digital-product-uniques-label">{{ "Set a unique identifier to match against existing elements"|t('feed-me') }}</h2>
+<p>{{ "Select the fields you want to use to check for existing elements. When selected, Feed Me will look for existing elements that match the fields provided below and either update, or skip depending on your choice of Import Strategy."|t('feed-me') }}</p>
 
 {% for tab in tabs %}
     {% for layoutField in tab.getElements()|filter(e => e is instance of('craft\\fieldlayoutelements\\CustomField')) %}

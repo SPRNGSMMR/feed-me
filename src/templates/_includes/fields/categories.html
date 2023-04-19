@@ -16,7 +16,7 @@
         type: 'elementselect',
         options: {
             elementType: fieldClass.elementType,
-            selectionLabel: "Default Category"|t('feed-me-rqen'),
+            selectionLabel: "Default Category"|t('feed-me'),
             sources: field.source ? [field.source] : '*',
         },
     } %}
@@ -38,12 +38,12 @@
 
 {% block extraSettings %}
     <div class="element-match">
-        <span>{{ 'Data provided for this category is:'|t('feed-me-rqen') }}</span>
+        <span>{{ 'Data provided for this category is:'|t('feed-me') }}</span>
 
         {% set matchAttributes = [
-            { value: 'title', label: 'Title'|t('feed-me-rqen') },
-            { value: 'elements.id', label: 'ID'|t('feed-me-rqen') },
-            { value: 'slug', label: 'Slug'|t('feed-me-rqen') },
+            { value: 'title', label: 'Title'|t('feed-me') },
+            { value: 'elements.id', label: 'ID'|t('feed-me') },
+            { value: 'slug', label: 'Slug'|t('feed-me') },
         ] %}
 
         {% for field in craft.app.fields.getAllFields() %}
@@ -64,7 +64,7 @@
 
     <div class="element-create">
         {{ feedMeMacro.checkbox({
-            label: 'Create categories if they do not exist'|t('feed-me-rqen'),
+            label: 'Create categories if they do not exist'|t('feed-me'),
             name: 'options[create]',
             value: 1,
             checked: hash_get(feed.fieldMapping, optionsPath ~ '.create') ?: '',

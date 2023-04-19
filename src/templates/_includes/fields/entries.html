@@ -17,7 +17,7 @@
         options: {
             elementType: fieldClass.elementType,
             criteria: {'status' : null},
-            selectionLabel: "Default Entry"|t('feed-me-rqen'),
+            selectionLabel: "Default Entry"|t('feed-me'),
             sources: field.sources ?? '*',
         },
     } %}
@@ -40,12 +40,12 @@
 {% block extraSettings %}
 
     <div class="element-match">
-        <span>{{ 'Data provided for this entry is:'|t('feed-me-rqen') }}</span>
+        <span>{{ 'Data provided for this entry is:'|t('feed-me') }}</span>
 
         {% set matchAttributes = [
-            { value: 'title', label: 'Title'|t('feed-me-rqen') },
-            { value: 'elements.id', label: 'ID'|t('feed-me-rqen') },
-            { value: 'slug', label: 'Slug'|t('feed-me-rqen') },
+            { value: 'title', label: 'Title'|t('feed-me') },
+            { value: 'elements.id', label: 'ID'|t('feed-me') },
+            { value: 'slug', label: 'Slug'|t('feed-me') },
         ] %}
 
         {% for field in craft.app.fields.getAllFields() %}
@@ -66,7 +66,7 @@
 
     <div class="element-create">
         {{ feedMeMacro.checkbox({
-            label: 'Create entries if they do not exist'|t('feed-me-rqen'),
+            label: 'Create entries if they do not exist'|t('feed-me'),
             name: 'options[create]',
             value: 1,
             checked: hash_get(feed.fieldMapping, optionsPath ~ '.create') ?: '',
@@ -76,7 +76,7 @@
     {% if field %}
         <div class="element-groups">
             <div class="element-group element-group-section">
-                <span>{{ 'Section:'|t('feed-me-rqen') }}</span>
+                <span>{{ 'Section:'|t('feed-me') }}</span>
 
                 {% set sources = craft.feedme.getEntrySourcesByField(field) %}
                 {% set sections = craft.feedme.getSelectOptions(sources, 'name', 'id', false) %}
@@ -101,7 +101,7 @@
 
             {% if sources and sources[0] %}
                 <div class="element-group element-group-entrytype" data-items="{{ entryTypes|json_encode }}">
-                    <span>{{ 'Type:'|t('feed-me-rqen') }}</span>
+                    <span>{{ 'Type:'|t('feed-me') }}</span>
 
                     {{ forms.selectField({
                         name: 'options[group][typeId]',

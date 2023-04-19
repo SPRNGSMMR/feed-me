@@ -158,7 +158,7 @@ class FeedModel extends Model
      */
     public function __toString()
     {
-        return Craft::t('feed-me-rqen', $this->name);
+        return Craft::t('feed-me', $this->name);
     }
 
     /**

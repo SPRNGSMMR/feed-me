@@ -16,7 +16,7 @@
         type: 'elementselect',
         options: {
             elementType: fieldClass.elementType,
-            selectionLabel: "Default Event"|t('feed-me-rqen'),
+            selectionLabel: "Default Event"|t('feed-me'),
             sources: field.sources ?? '*',
         },
     } %}
@@ -26,16 +26,16 @@
 
 {% block extraSettings %}
     <div class="element-match">
-        <span>{{ 'Data provided for this calendar event is:'|t('feed-me-rqen') }}</span>
+        <span>{{ 'Data provided for this calendar event is:'|t('feed-me') }}</span>
 
         {{ forms.selectField({
             name: 'options[match]',
             class: '',
             value: hash_get(feed.fieldMapping, optionsPath ~ '.match') ?: '',
             options: [
-                { value: 'title', label: 'Title'|t('feed-me-rqen') },
-                { value: 'elements.id', label: 'ID'|t('feed-me-rqen') },
-                { value: 'slug', label: 'Slug'|t('feed-me-rqen') },
+                { value: 'title', label: 'Title'|t('feed-me') },
+                { value: 'elements.id', label: 'ID'|t('feed-me') },
+                { value: 'slug', label: 'Slug'|t('feed-me') },
             ],
         }) }}
     </div>

@@ -34,7 +34,7 @@ class Number extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/fields/default';
+        return 'feed-me/_includes/fields/default';
     }
 
     // Public Methods

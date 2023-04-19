@@ -42,7 +42,7 @@ class DigitalProduct extends Element
      */
     public function getGroupsTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/digital-products/groups';
+        return 'feed-me/_includes/elements/digital-products/groups';
     }
 
     /**
@@ -50,7 +50,7 @@ class DigitalProduct extends Element
      */
     public function getColumnTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/digital-products/column';
+        return 'feed-me/_includes/elements/digital-products/column';
     }
 
     /**
@@ -58,7 +58,7 @@ class DigitalProduct extends Element
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/digital-products/map';
+        return 'feed-me/_includes/elements/digital-products/map';
     }
 
     // Public Methods

@@ -49,7 +49,7 @@ class Assets extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/fields/assets';
+        return 'feed-me/_includes/fields/assets';
     }
 
     // Public Methods

@@ -53,7 +53,7 @@ class User extends Element
      */
     public function getGroupsTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/user/groups';
+        return 'feed-me/_includes/elements/user/groups';
     }
 
     /**
@@ -61,7 +61,7 @@ class User extends Element
      */
     public function getColumnTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/user/column';
+        return 'feed-me/_includes/elements/user/column';
     }
 
     /**
@@ -69,7 +69,7 @@ class User extends Element
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/user/map';
+        return 'feed-me/_includes/elements/user/map';
     }
 
     // Public Methods

@@ -39,7 +39,7 @@ class Tag extends Element
      */
     public function getGroupsTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/tag/groups';
+        return 'feed-me/_includes/elements/tag/groups';
     }
 
     /**
@@ -47,7 +47,7 @@ class Tag extends Element
      */
     public function getColumnTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/tag/column';
+        return 'feed-me/_includes/elements/tag/column';
     }
 
     /**
@@ -55,7 +55,7 @@ class Tag extends Element
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/tag/map';
+        return 'feed-me/_includes/elements/tag/map';
     }
 
     // Public Methods

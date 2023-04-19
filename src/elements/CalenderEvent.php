@@ -74,7 +74,7 @@ class CalenderEvent extends Element
      */
     public function getGroupsTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/calendar-events/groups';
+        return 'feed-me/_includes/elements/calendar-events/groups';
     }
 
     /**
@@ -82,7 +82,7 @@ class CalenderEvent extends Element
      */
     public function getColumnTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/calendar-events/column';
+        return 'feed-me/_includes/elements/calendar-events/column';
     }
 
     /**
@@ -90,7 +90,7 @@ class CalenderEvent extends Element
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/elements/calendar-events/map';
+        return 'feed-me/_includes/elements/calendar-events/map';
     }
 
     // Public Methods

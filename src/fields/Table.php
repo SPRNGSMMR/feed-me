@@ -40,7 +40,7 @@ class Table extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/fields/table';
+        return 'feed-me/_includes/fields/table';
     }
 
     // Public Methods

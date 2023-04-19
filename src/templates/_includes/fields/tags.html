@@ -16,7 +16,7 @@
         type: 'elementselect',
         options: {
             elementType: fieldClass.elementType,
-            selectionLabel: "Default Tag"|t('feed-me-rqen'),
+            selectionLabel: "Default Tag"|t('feed-me'),
             sources: field.source ? [field.source] : '*',
         },
     } %}
@@ -39,7 +39,7 @@
 {% block extraSettings %}
     <div class="element-create">
         {{ feedMeMacro.checkbox({
-            label: 'Create tags if they do not exist'|t('feed-me-rqen'),
+            label: 'Create tags if they do not exist'|t('feed-me'),
             name: 'options[create]',
             value: 1,
             checked: hash_get(feed.fieldMapping, optionsPath ~ '.create') ?: '',

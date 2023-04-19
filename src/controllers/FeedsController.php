@@ -41,7 +41,7 @@ class FeedsController extends Controller
     {
         $variables['feeds'] = Plugin::$plugin->feeds->getFeeds();
 
-        return $this->renderTemplate('feed-me-rqen/feeds/index', $variables);
+        return $this->renderTemplate('feed-me/feeds/index', $variables);
     }
 
     /**
@@ -67,7 +67,7 @@ class FeedsController extends Controller
         $variables['dataTypes'] = Plugin::$plugin->data->dataTypesList();
         $variables['elements'] = Plugin::$plugin->elements->getRegisteredElements();
 
-        return $this->renderTemplate('feed-me-rqen/feeds/_edit', $variables);
+        return $this->renderTemplate('feed-me/feeds/_edit', $variables);
     }
 
     /**
@@ -89,7 +89,7 @@ class FeedsController extends Controller
         $variables['feedMappingData'] = $feed->getFeedMapping(false);
         $variables['feed'] = $feed;
 
-        return $this->renderTemplate('feed-me-rqen/feeds/_element', $variables);
+        return $this->renderTemplate('feed-me/feeds/_element', $variables);
     }
 
     /**
@@ -110,7 +110,7 @@ class FeedsController extends Controller
         $variables['feedMappingData'] = $feed->getFeedMapping();
         $variables['feed'] = $feed;
 
-        return $this->renderTemplate('feed-me-rqen/feeds/_map', $variables);
+        return $this->renderTemplate('feed-me/feeds/_map', $variables);
     }
 
     /**
@@ -124,7 +124,7 @@ class FeedsController extends Controller
 
         $feed = Plugin::$plugin->feeds->getFeedById($feedId);
 
-        $return = $request->getParam('return') ?: 'feed-me-rqen';
+        $return = $request->getParam('return') ?: 'feed-me';
 
         $variables['feed'] = $feed;
         $variables['task'] = $this->_runImportTask($feed);
@@ -132,7 +132,7 @@ class FeedsController extends Controller
         if ($request->getParam('direct')) {
             $view = $this->getView();
             $view->setTemplateMode($view::TEMPLATE_MODE_CP);
-            return $this->renderTemplate('feed-me-rqen/feeds/_direct', $variables);
+            return $this->renderTemplate('feed-me/feeds/_direct', $variables);
         }
 
         return $this->redirect($return);
@@ -148,7 +148,7 @@ class FeedsController extends Controller
 
         $variables['feed'] = $feed;
 
-        return $this->renderTemplate('feed-me-rqen/feeds/_status', $variables);
+        return $this->renderTemplate('feed-me/feeds/_status', $variables);
     }
 
     /**
@@ -160,7 +160,7 @@ class FeedsController extends Controller
     {
         $feed = $this->_getModelFromPost();
 
-        return $this->_saveAndRedirect($feed, 'feed-me-rqen/feeds/', true);
+        return $this->_saveAndRedirect($feed, 'feed-me/feeds/', true);
     }
 
     /**
@@ -173,7 +173,7 @@ class FeedsController extends Controller
         $feed = $this->_getModelFromPost();
 
         if ($feed->getErrors()) {
-            $this->setFailFlash(Craft::t('feed-me-rqen', 'Couldn’t save the feed.'));
+            $this->setFailFlash(Craft::t('feed-me', 'Couldn’t save the feed.'));
 
             // Send the category group back to the template
             Craft::$app->getUrlManager()->setRouteParams([
@@ -183,7 +183,7 @@ class FeedsController extends Controller
             return null;
         }
 
-        return $this->_saveAndRedirect($feed, 'feed-me-rqen/feeds/element/', true);
+        return $this->_saveAndRedirect($feed, 'feed-me/feeds/element/', true);
     }
 
     /**
@@ -195,7 +195,7 @@ class FeedsController extends Controller
     {
         $feed = $this->_getModelFromPost();
 
-        return $this->_saveAndRedirect($feed, 'feed-me-rqen/feeds/map/', true);
+        return $this->_saveAndRedirect($feed, 'feed-me/feeds/map/', true);
     }
 
     /**
@@ -207,7 +207,7 @@ class FeedsController extends Controller
     {
         $feed = $this->_getModelFromPost();
 
-        return $this->_saveAndRedirect($feed, 'feed-me-rqen/feeds/status/', true);
+        return $this->_saveAndRedirect($feed, 'feed-me/feeds/status/', true);
     }
 
     /**
@@ -223,9 +223,9 @@ class FeedsController extends Controller
 
         Plugin::$plugin->feeds->duplicateFeed($feed);
 
-        Craft::$app->getSession()->setNotice(Craft::t('feed-me-rqen', 'Feed duplicated.'));
+        Craft::$app->getSession()->setNotice(Craft::t('feed-me', 'Feed duplicated.'));
 
-        return $this->redirect('feed-me-rqen/feeds');
+        return $this->redirect('feed-me/feeds');
     }
 
     /**
@@ -330,7 +330,7 @@ class FeedsController extends Controller
         // Are we running from the CP?
         if ($request->getIsCpRequest()) {
             // if not using the direct param for this request, do UI stuff
-            Craft::$app->getSession()->setNotice(Craft::t('feed-me-rqen', 'Feed processing started.'));
+            Craft::$app->getSession()->setNotice(Craft::t('feed-me', 'Feed processing started.'));
 
             // Create the import task
             $this->module->queue->push(new FeedImport([
@@ -376,7 +376,7 @@ class FeedsController extends Controller
     private function _saveAndRedirect($feed, $redirect, bool $withId = false): ?Response
     {
         if (!Plugin::$plugin->feeds->saveFeed($feed)) {
-            Craft::$app->getSession()->setError(Craft::t('feed-me-rqen', 'Unable to save feed.'));
+            Craft::$app->getSession()->setError(Craft::t('feed-me', 'Unable to save feed.'));
 
             Craft::$app->getUrlManager()->setRouteParams([
                 'feed' => $feed,
@@ -385,7 +385,7 @@ class FeedsController extends Controller
             return null;
         }
 
-        Craft::$app->getSession()->setNotice(Craft::t('feed-me-rqen', 'Feed saved.'));
+        Craft::$app->getSession()->setNotice(Craft::t('feed-me', 'Feed saved.'));
 
         if ($withId) {
             $redirect .= $feed->id;
@@ -440,33 +440,33 @@ class FeedsController extends Controller
             $elementGroup = $feed->elementGroup[$feed->elementType];
 
             if (($feed->elementType === 'craft\elements\Category') && empty($elementGroup)) {
-                $feed->addError('elementGroup', Craft::t('feed-me-rqen', 'Category Group is required'));
+                $feed->addError('elementGroup', Craft::t('feed-me', 'Category Group is required'));
             }
 
             if ($feed->elementType === 'craft\elements\Entry') {
                 if (empty($elementGroup['section']) || empty($elementGroup['entryType'])) {
-                    $feed->addError('elementGroup', Craft::t('feed-me-rqen', 'Entry Section and Type are required'));
+                    $feed->addError('elementGroup', Craft::t('feed-me', 'Entry Section and Type are required'));
                 }
             }
 
             if (($feed->elementType === 'craft\commerce\elements\Product') && empty($elementGroup)) {
-                $feed->addError('elementGroup', Craft::t('feed-me-rqen', 'Commerce Product Type is required'));
+                $feed->addError('elementGroup', Craft::t('feed-me', 'Commerce Product Type is required'));
             }
 
             if (($feed->elementType === 'craft\digitalproducts\elements\Product') && empty($elementGroup)) {
-                $feed->addError('elementGroup', Craft::t('feed-me-rqen', 'Digital Product Group is required'));
+                $feed->addError('elementGroup', Craft::t('feed-me', 'Digital Product Group is required'));
             }
 
             if (($feed->elementType === 'craft\elements\Asset') && empty($elementGroup)) {
-                $feed->addError('elementGroup', Craft::t('feed-me-rqen', 'Asset Volume is required'));
+                $feed->addError('elementGroup', Craft::t('feed-me', 'Asset Volume is required'));
             }
 
             if (($feed->elementType === 'craft\elements\Tag') && empty($elementGroup)) {
-                $feed->addError('elementGroup', Craft::t('feed-me-rqen', 'Tag Group is required'));
+                $feed->addError('elementGroup', Craft::t('feed-me', 'Tag Group is required'));
             }
 
             if (($feed->elementType === 'Solspace\Calendar\Elements\Event') && empty($elementGroup)) {
-                $feed->addError('elementGroup', Craft::t('feed-me-rqen', 'Calendar is required'));
+                $feed->addError('elementGroup', Craft::t('feed-me', 'Calendar is required'));
             }
         }
 

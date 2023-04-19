@@ -48,7 +48,7 @@ class Entries extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/fields/entries';
+        return 'feed-me/_includes/fields/entries';
     }
 
     // Public Methods

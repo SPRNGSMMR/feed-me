@@ -1,23 +1,23 @@
 {% extends 'feed-me/_layouts' %}
 
 {% set crumbs = [
-    { label: craft.feedme.getPluginName|t('feed-me-rqen'), url: url('feed-me-rqen') },
-    { label: feed.name|t('feed-me-rqen'), url: url('feed-me/feeds/' ~ feed.id) },
-    { label: 'Element'|t('feed-me-rqen'), url: url('feed-me/feeds/element/' ~ feed.id) },
-    { label: 'Map'|t('feed-me-rqen'), url: url('feed-me/feeds/map/' ~ feed.id) },
+    { label: craft.feedme.getPluginName|t('feed-me'), url: url('feed-me') },
+    { label: feed.name|t('feed-me'), url: url('feed-me/feeds/' ~ feed.id) },
+    { label: 'Element'|t('feed-me'), url: url('feed-me/feeds/element/' ~ feed.id) },
+    { label: 'Map'|t('feed-me'), url: url('feed-me/feeds/map/' ~ feed.id) },
 ] %}
 
 {% set title = feed.name %}
 
-{% set title = (feed.id) ? feed.name : 'Create a new feed'|t('feed-me-rqen') %}
+{% set title = (feed.id) ? feed.name : 'Create a new feed'|t('feed-me') %}
 {% set noTabs = true %}
 {% set fullPageForm = true %}
 
 {% set buttons %}
     {% if feedMappingData.success %}
         <div class="buttons">
-            <input type="button" data-action="feed-me/feeds/save-and-map-feed" class="btn submit" value="{{ 'Save'|t('feed-me-rqen') }}">
-            <input type="button" data-action="feed-me/feeds/save-and-review-feed" class="btn submit" value="{{ 'Save & Continue'|t('feed-me-rqen') }}">
+            <input type="button" data-action="feed-me/feeds/save-and-map-feed" class="btn submit" value="{{ 'Save'|t('feed-me') }}">
+            <input type="button" data-action="feed-me/feeds/save-and-review-feed" class="btn submit" value="{{ 'Save & Continue'|t('feed-me') }}">
         </div>
     {% endif %}
 {% endset %}
@@ -49,7 +49,7 @@
         {% set parsedFeedData = parsedFeedData|sort((a, b) => b.label < a.label) %}
 
         {% set parsedFeedData = [
-            { label: 'Don’t import'|t('feed-me-rqen'), value: 'noimport' },
+            { label: 'Don’t import'|t('feed-me'), value: 'noimport' },
             { label: 'Use default value', value: 'usedefault' }
         ]|merge(parsedFeedData) %}
 
@@ -59,12 +59,12 @@
         <div class="feedme-fullpage fullpage-error">
             <img src="{{ baseAssetsUrl ~ '/img/icon-error.svg' }}">
 
-            <h2>{{ 'Unable to proceed to field mapping'|t('feed-me-rqen') }}</h2>
-            <p>{{ 'Feed Me is unable to find, or parse your provided data. This usually means your URL cannot be reached from your Craft site, or your {feedType} is invalid. Check the logs, and double-check your settings.'|t('feed-me-rqen', { feedType: feed.feedType|upper }) }}</p>
+            <h2>{{ 'Unable to proceed to field mapping'|t('feed-me') }}</h2>
+            <p>{{ 'Feed Me is unable to find, or parse your provided data. This usually means your URL cannot be reached from your Craft site, or your {feedType} is invalid. Check the logs, and double-check your settings.'|t('feed-me', { feedType: feed.feedType|upper }) }}</p>
 
             <div class="buttons">
-                <a href="{{ url('feed-me/feeds/' ~ feed.id) }}" class="btn submit">&larr; {{ 'Back to feed'|t('feed-me-rqen') }}</a>
-                <a href="{{ url('feed-me/logs') }}" class="btn submit">{{ 'Go to logs'|t('feed-me-rqen') }}</a>
+                <a href="{{ url('feed-me/feeds/' ~ feed.id) }}" class="btn submit">&larr; {{ 'Back to feed'|t('feed-me') }}</a>
+                <a href="{{ url('feed-me/logs') }}" class="btn submit">{{ 'Go to logs'|t('feed-me') }}</a>
             </div>
         </div>
     {% endif %}

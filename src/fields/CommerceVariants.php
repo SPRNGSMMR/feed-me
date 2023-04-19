@@ -43,7 +43,7 @@ class CommerceVariants extends Field implements FieldInterface
      */
     public function getMappingTemplate(): string
     {
-        return 'feed-me-rqen/_includes/fields/commerce_variants';
+        return 'feed-me/_includes/fields/commerce_variants';
     }
 
     // Public Methods
