@@ -155,6 +155,7 @@ class DataTypes extends Component
      */
     public function getRawData($url, $feedId = null): array
     {
+        $oriUrl = $url;
         $event = new FeedDataEvent([
             'url' => $url,
             'feedId' => $feedId,
@@ -197,8 +198,14 @@ class DataTypes extends Component
         try {
             $client = Plugin::$plugin->service->createGuzzleClient($feedId);
             $options = Plugin::$plugin->service->getRequestOptions($feedId);
+            $method = 'GET';
 
-            $resp = $client->request('GET', $url, $options);
+            // COMMENT: Change request method for Bob's People Search endpoint
+            if (strpos($oriUrl, 'api.hibob.com/v1/people/search') !== false) {
+                $method = 'POST';
+            }
+            
+            $resp = $client->request($method, $url, $options);
             $data = (string)$resp->getBody();
 
             // Save headers for later
