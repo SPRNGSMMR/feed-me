@@ -214,7 +214,7 @@ class DataTypes extends Component
             print_r($options);
             echo "\n";
 
-            if (strpos($oriUrl, 'api.hibob.com/v1/people/search')) {
+            if (strpos($oriUrl, 'api.hibob.com/v1/people/search') !== false) {
                 $method = 'POST';
             }
             
