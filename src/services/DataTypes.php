@@ -197,8 +197,13 @@ class DataTypes extends Component
         try {
             $client = Plugin::$plugin->service->createGuzzleClient($feedId);
             $options = Plugin::$plugin->service->getRequestOptions($feedId);
+            $method = 'GET';
 
-            $resp = $client->request('GET', $url, $options);
+            if (strpos($url, 'https://api.hibob.com/v1/people/search')) {
+                $method = 'POST';
+            }
+            
+            $resp = $client->request($method, $url, $options);
             $data = (string)$resp->getBody();
 
             // Save headers for later
