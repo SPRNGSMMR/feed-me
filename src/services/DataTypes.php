@@ -200,29 +200,8 @@ class DataTypes extends Component
             $options = Plugin::$plugin->service->getRequestOptions($feedId);
             $method = 'GET';
 
-            echo "REQUEST METHOD: \n";
-            echo $options['requestMethod'];
-            echo "\n";
-
-            // echo "URL: \n";
-            // print_r($oriUrl);
-            // echo "\n";
-            // echo "\n";
-
-            // echo "URL TEST: \n";
-            // echo strpos($oriUrl, 'api.hibob.com/v1/people/search');
-            // echo "\n";
-            // echo "\n";
-
-            echo "OPTIONS: \n";
-            print_r($options);
-            echo "\n";
-            echo "\n";
-
-            // if (strpos($oriUrl, 'api.hibob.com/v1/people/search') !== false) {
-            //     $method = 'POST';
-            // }
-            if ($options['requestMethod'] == 'POST') {
+            // COMMENT: Change request method for Bob's People Search endpoint
+            if (strpos($oriUrl, 'api.hibob.com/v1/people/search') !== false) {
                 $method = 'POST';
             }
             
