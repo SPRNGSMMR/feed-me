@@ -155,6 +155,7 @@ class DataTypes extends Component
      */
     public function getRawData($url, $feedId = null): array
     {
+        $oriUrl = $url;
         $event = new FeedDataEvent([
             'url' => $url,
             'feedId' => $feedId,
@@ -199,7 +200,16 @@ class DataTypes extends Component
             $options = Plugin::$plugin->service->getRequestOptions($feedId);
             $method = 'GET';
 
-            if (strpos($url, 'https://api.hibob.com/v1/people/search')) {
+            echo "URL: \n";
+            print_r($oriUrl);
+            echo "\n";
+            echo "\n";
+
+            echo "OPTIONS: \n";
+            print_r($options);
+            echo "\n";
+
+            if (strpos($oriUrl, 'https://api.hibob.com/v1/people/search')) {
                 $method = 'POST';
             }
             
