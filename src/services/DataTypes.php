@@ -205,11 +205,16 @@ class DataTypes extends Component
             echo "\n";
             echo "\n";
 
+            echo "URL TEST: \n";
+            echo strpos($oriUrl, 'api.hibob.com/v1/people/search');
+            echo "\n";
+            echo "\n";
+
             echo "OPTIONS: \n";
             print_r($options);
             echo "\n";
 
-            if (strpos($oriUrl, 'https://api.hibob.com/v1/people/search')) {
+            if (strpos($oriUrl, 'api.hibob.com/v1/people/search')) {
                 $method = 'POST';
             }
             
